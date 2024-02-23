@@ -1,9 +1,12 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const mode = "development";
+const entry = "./src/index.ts";
+
 module.exports = {
-  mode: "development",
-  entry: "./src/index.ts",
+  mode: mode,
+  entry: entry,
 
   module: {
     rules: [
@@ -30,5 +33,5 @@ module.exports = {
 
   plugins: [new MiniCssExtractPlugin()],
 
-  watch: true,
+  watch: mode === "development",
 };

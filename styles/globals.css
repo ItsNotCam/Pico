@@ -1,4 +1,12 @@
 /* IMPORT ALL CSS FILES HERE */
+:root {
+  --color-600: #3d3d3d;
+  --color-500: #5c5c5c;
+  --color-400: #686868;
+  --color-300: #a6a6a6;
+  --color-200: #e2e2e2;
+  --color-100: #ffffff;
+}
 
 * {
   padding: 0;
@@ -8,6 +16,7 @@
 
 body {
   font-family: "League Spartan", "sans-serif";
+  color: var(--color-600);
 }
 
 img {
@@ -17,15 +26,6 @@ img {
 
 ul {
   list-style: none;
-}
-
-:root {
-  --color-600: #3d3d3d;
-  --color-500: #5c5c5c;
-  --color-400: #686868;
-  --color-300: #a6a6a6;
-  --color-200: #e2e2e2;
-  --color-100: #ffffff;
 }
 
 .museo {
@@ -40,42 +40,61 @@ ul {
   font-style: normal;
 }
 
-.font-100 {
+.c-600 {
+  color: var(--color-600);
+}
+.c-500 {
+  color: var(--color-500);
+}
+.c-400 {
+  color: var(--color-400);
+}
+.c-300 {
+  color: var(--color-300);
+}
+.c-200 {
+  color: var(--color-200);
+}
+.c-100 {
+  color: var(--color-100);
+}
+
+.f-100 {
   font-weight: 100;
 }
 
-.font-200 {
+.f-200 {
   font-weight: 200;
 }
 
-.font-300 {
+.f-300 {
   font-weight: 300;
 }
 
-.font-400 {
+.f-400 {
   font-weight: 400;
 }
 
-.font-500 {
+.f-500 {
   font-weight: 500;
 }
 
-.font-600 {
+.f-600 {
   font-weight: 600;
 }
 
-.font-700 {
+.f-700 {
   font-weight: 700;
 }
 
-.font-800 {
+.f-800 {
   font-weight: 800;
 }
 
-.font-900 {
+.f-900 {
   font-weight: 900;
 }
 
-.font-italic {
+.italic {
   font-style: italic;
 }

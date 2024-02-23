@@ -1,10 +1,8 @@
 /** @type {import('postcss-load-config').Config} */
-const config = {
+module.exports = {
   plugins: [
     require("autoprefixer"),
     require("cssnano"),
     require("postcss-nested"),
   ],
 };
-
-module.exports = config;
