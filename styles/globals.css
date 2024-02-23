@@ -12,6 +12,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 body {
@@ -28,6 +29,31 @@ ul {
   list-style: none;
 }
 
+h1,
+.h1 {
+  font-size: 2.4rem;
+}
+
+h2,
+.h2 {
+  font-size: 2rem;
+}
+
+h3,
+.h3 {
+  font-size: 1.65rem;
+}
+
+h4,
+.h4 {
+  font-size: 1.5rem;
+}
+
+h5,
+.h5 {
+  font-size: 1.3rem;
+}
+
 .museo {
   font-family: "MuseoModerno", sans-serif;
   font-optical-sizing: auto;
@@ -40,58 +66,53 @@ ul {
   font-style: normal;
 }
 
-.c-600 {
+.c-9 {
+  color: black;
+}
+.c-6 {
   color: var(--color-600);
 }
-.c-500 {
+.c-5 {
   color: var(--color-500);
 }
-.c-400 {
+.c-4 {
   color: var(--color-400);
 }
-.c-300 {
+.c-3 {
   color: var(--color-300);
 }
-.c-200 {
+.c-2 {
   color: var(--color-200);
 }
-.c-100 {
+.c-1 {
   color: var(--color-100);
 }
 
-.f-100 {
+.f-1 {
   font-weight: 100;
 }
-
-.f-200 {
+.f-2 {
   font-weight: 200;
 }
-
-.f-300 {
+.f-3 {
   font-weight: 300;
 }
-
-.f-400 {
+.f-4 {
   font-weight: 400;
 }
-
-.f-500 {
+.f-5 {
   font-weight: 500;
 }
-
-.f-600 {
+.f-6 {
   font-weight: 600;
 }
-
-.f-700 {
+.f-7 {
   font-weight: 700;
 }
-
-.f-800 {
+.f-8 {
   font-weight: 800;
 }
-
-.f-900 {
+.f-9 {
   font-weight: 900;
 }
 
