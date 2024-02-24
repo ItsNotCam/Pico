@@ -14,9 +14,9 @@ $( ".img-selector" ).on("click", function() {
 	const idx = parseInt(this.id.replace("img-select-", ""));
 	for(let i = 0; i < imgs.length; i++) {
 		if(idx === i) {
-			imgs[i].removeClass("hidden")
+			imgs[i].removeClass("hidden");
 		} else {
-			imgs[i].addClass("hidden")
+			imgs[i].addClass("hidden");
 		}
 	}
 })
