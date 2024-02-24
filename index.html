@@ -62,18 +62,27 @@
             </div>
             <ul data-expanded="false" class="clr-6 museo" id="primary-nav">
               <li class="h5 cursor-pointer selected" data-link="/index.html">
-                <span>::</span>home
+                <span class="pre-colon">::</span>home
               </li>
               <li class="h5 cursor-pointer" data-link="/gallery.html">
-                <span>::</span>gallery
+                <span class="pre-colon">::</span>gallery
               </li>
               <li class="h5 cursor-pointer" data-link="/product.html">
-                <span>::</span>nano
+                <span class="pre-colon">::</span>nano
               </li>
               <li class="h5 cursor-pointer" data-link="/purchase.html">
-                <span>::</span>purchase
+                <span class="pre-colon">::</span>purchase
               </li>
-              <li class="h5 cursor-pointer"><span>::</span>info</li>
+              <li id="info-dropdown" class="h5 cursor-pointer li-dropdown" aria-expanded="false" data-ignore-link="true">
+                <span class="h5"><span class="pre-colon">::</span>info</span>
+                <span class="chevron"></span>
+                <ul class="fw-400">
+                  <li data-link="/about.html"><span class="pre-colon">::</span> about</li>
+                  <li data-link="/careers.html"><span class="pre-colon">::</span> careers</li>
+                  <li data-link="/contact.html"><span class="pre-colon">::</span> contact</li>
+                  <li data-link="/map.html"><span class="pre-colon">::</span> site map</li>
+                </ul>
+              </li>
             </ul>
             <div class="hamburger" id="nav-dropdown-button ">
               <svg viewBox="0 0 100 60" width="40" height="40">

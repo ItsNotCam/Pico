@@ -22,6 +22,7 @@
 body {
   font-family: "League Spartan", "sans-serif";
   color: var(--color-600);
+  background-color: var(--color-200);
 }
 
 html,
