@@ -16,7 +16,7 @@
       rel="stylesheet"
     />
 
-    <script defer src="index.js"></script>
+    <script defer src="public/index.js"></script>
     <title>Pico</title>
   </head>
   <body>
@@ -31,14 +31,14 @@
         <img src="public/images/Untitled.png" alt="phone" />
       </div>
       <div class="img-selectors">
-        <div class="img-selector selected" id="img-select-1"></div>
+        <div class="img-selector selected" id="img-select-0"></div>
+        <div class="img-selector" id="img-select-1"></div>
         <div class="img-selector" id="img-select-2"></div>
-        <div class="img-selector" id="img-select-3"></div>
       </div>
-      <div class="img-number museo fw-2">
-        <h1>01</h1>
-        <h2>02</h2>
-        <h3>03</h3>
+      <div class="img-numbers museo fw-2">
+        <h1 id="img-number-0">01</h1>
+        <h1 id="img-number-1" class="hidden">02</h1>
+        <h1 id="img-number-2" class="hidden">03</h1>
       </div>
       <div class="main-container">
         <div class="title-wrapper">
