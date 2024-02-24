@@ -41,11 +41,11 @@ function redirect(item: any): void {
 	$(function() {
 		const $newDiv = $('<div/>', { class: "page-out" })
 		$('body').prepend($newDiv)
-	})
 
-	setTimeout(() => {
-		window.location.assign(link);
-	}, 500)
+		setTimeout(() => {
+			window.location.assign(link);
+		}, 500)
+	})
 }
 
 function registerMutualExclusion(selector: string, items: any): void {
