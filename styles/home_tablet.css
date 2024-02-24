@@ -8,7 +8,16 @@
   }
 
   .phone-img {
-    width: auto;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    & img {
+      margin-inline: auto;
+    }
   }
 
   .img-numbers,
@@ -40,6 +49,10 @@
     }
   }
 
+  #primary-nav {
+    display: none;
+  }
+
   .navigation {
     position: absolute;
     top: 0;
@@ -69,10 +82,6 @@
       & svg {
         margin-top: -0.35rem;
       }
-    }
-
-    & ul {
-      display: none;
     }
 
     & .hamburger {
