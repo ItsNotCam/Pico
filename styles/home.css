@@ -170,31 +170,10 @@
   background-color: var(--color-200);
 }
 
-.blurred-circle {
-  content: "";
-  background-color: var(--color-600);
-  opacity: 0;
-  height: 600px;
-  width: 600px;
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: -1;
-
-  transform: translate(-50%, -50%);
-  filter: blur(40px);
-
-  transition-delay: 1s;
-  transition: opacity 200ms;
-
-  animation: op-blur-in 0.5s 0.5s linear forwards;
-}
-
 .phone-img {
   position: absolute;
   height: 100%;
-  margin-left: 8.5%;
+  /* margin-left: 85vw; */
   top: 50%;
   transform: translateY(-50%);
 
