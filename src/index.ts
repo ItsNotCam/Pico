@@ -14,9 +14,9 @@ $( ".img-selector" ).on("click", function() {
 	const idx = parseInt(this.id.replace("img-select-", ""));
 	for(let i = 0; i < imgs.length; i++) {
 		if(idx === i) {
-			imgs[i].removeClass("hidden");
+			imgs[i].css({"opacity": "43%", "transition": "opacity 500ms"});
 		} else {
-			imgs[i].addClass("hidden");
+			imgs[i].css({"opacity": 0, "transition": "opacity 500ms"});
 		}
 	}
 })

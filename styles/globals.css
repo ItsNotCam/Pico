@@ -1,5 +1,7 @@
 /* IMPORT ALL CSS FILES HERE */
 @import "./home.css";
+@import "./home_tablet.css";
+@import "./home_mobile.css";
 
 :root {
   --color-600: #3d3d3d;
@@ -20,6 +22,11 @@
 body {
   font-family: "League Spartan", "sans-serif";
   color: var(--color-600);
+}
+
+html,
+body {
+  height: 100%;
 }
 
 img {
