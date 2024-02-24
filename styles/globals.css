@@ -1,4 +1,6 @@
 /* IMPORT ALL CSS FILES HERE */
+@import "./home.css";
+
 :root {
   --color-600: #3d3d3d;
   --color-500: #5c5c5c;
@@ -66,56 +68,63 @@ h5,
   font-style: normal;
 }
 
-.c-9 {
+.clr-9 {
   color: black;
 }
-.c-6 {
+.clr-6 {
   color: var(--color-600);
 }
-.c-5 {
+.clr-5 {
   color: var(--color-500);
 }
-.c-4 {
+.clr-4 {
   color: var(--color-400);
 }
-.c-3 {
+.clr-3 {
   color: var(--color-300);
 }
-.c-2 {
+.clr-2 {
   color: var(--color-200);
 }
-.c-1 {
+.clr-1 {
   color: var(--color-100);
 }
 
-.f-1 {
+.fw-1 {
   font-weight: 100;
 }
-.f-2 {
+.fw-2 {
   font-weight: 200;
 }
-.f-3 {
+.fw-3 {
   font-weight: 300;
 }
-.f-4 {
+.fw-4 {
   font-weight: 400;
 }
-.f-5 {
+.fw-5 {
   font-weight: 500;
 }
-.f-6 {
+.fw-6 {
   font-weight: 600;
 }
-.f-7 {
+.fw-7 {
   font-weight: 700;
 }
-.f-8 {
+.fw-8 {
   font-weight: 800;
 }
-.f-9 {
+.fw-9 {
   font-weight: 900;
 }
 
 .italic {
   font-style: italic;
+}
+
+.circles-container {
+  overflow: hidden;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
 }
