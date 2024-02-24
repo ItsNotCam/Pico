@@ -39,9 +39,13 @@
     flex-direction: row;
     gap: 1.5rem;
 
+    & li {
+    }
+
     & li svg {
       fill: var(--color-500);
       height: 2.25rem;
+      cursor: pointer;
     }
   }
 }

@@ -128,3 +128,17 @@ h5,
   width: 100vw;
   height: 100vh;
 }
+
+.hashtag {
+  position: absolute;
+  right: -11rem;
+  bottom: 0.5rem;
+  font-size: 1.2rem;
+  transform: rotate(-90deg);
+  text-orientation: sideways;
+  transform-origin: left;
+
+  &::after {
+    content: "# technology x design";
+  }
+}
