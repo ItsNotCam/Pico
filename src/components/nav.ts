@@ -7,6 +7,20 @@ $("#nav-wrapper").load("/components/nav.html #nav-wrapper", function () {
     document.querySelectorAll("#primary-nav li")
   );
 
+  // set current page name for navigation
+  let page = window.location.pathname;
+  page = page.substring(page.lastIndexOf("/"))
+    .replace("/", "")
+    .replace(".html", "")
+    .replace("_", " ");
+
+  if(page === "" || page === "index") {
+    page = "home";
+  } else if(page === "map") {
+    page = "site map";
+  }
+  $("#current-page").text(page);
+
   $("#nav-dropdown-button").on("click", function () {
     const nav: JQuery = $("#primary-nav");
     const droppedDown: string | undefined = nav.attr("data-expanded");
@@ -23,8 +37,11 @@ $("#nav-wrapper").load("/components/nav.html #nav-wrapper", function () {
 
   $("#primary-nav li").each(function () {
     const pageName = $(this).data("link");
-    const isSelectedPage = ( pageName === window.location.pathname )
-      || ( window.location.pathname === "/" && pageName === "/index.html" );
+    const infoSites = ["/about.html", "/careers.html", "/contact.html", "/site_map.html"]
+
+    let isSelectedPage = ( pageName === window.location.pathname )
+      || ( window.location.pathname === "/" && pageName === "/index.html" )
+      || (this.id === "info-dropdown") && infoSites.includes(window.location.pathname);
 
     if(isSelectedPage) {
       $(this).attr("data-selected", "true");

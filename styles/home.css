@@ -28,28 +28,6 @@
   cursor: pointer;
 }
 
-.page-in,
-.page-out {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: transparent;
-  transform-origin: top;
-  z-index: 9999;
-  pointer-events: none;
-}
-
-.page-in {
-  backdrop-filter: blur(10px);
-  animation: blur-in 1.25s 100ms cubic-bezier(0.56, 0.33, 0.18, 0.94) forwards;
-}
-
-.page-out {
-  animation: blur-out 500ms ease-out forwards;
-}
-
 .img-numbers {
   color: #a6a6a6;
   display: flex;
@@ -106,12 +84,13 @@
     width: 1.25rem;
     border-radius: 50%;
     border: 2px solid var(--color-600);
+
+    &[data-selected="true"] {
+      background-color: var(--color-600);
+      transition: background-color 350ms;
+    }
   }
 
-  & .selected {
-    background-color: var(--color-600);
-    transition: background-color 350ms;
-  }
 }
 
 .main-container {

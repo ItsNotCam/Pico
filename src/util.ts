@@ -6,10 +6,10 @@ export function registerMutualExclusion(selector: string, items: any): void {
       return;
     }
     
-    $(this).attr("data-selected", "true")
     items.forEach((item: any) => {
       $(item).attr("data-selected", "false")
     });
+    $(this).attr("data-selected", "true")
   });
 }
 
