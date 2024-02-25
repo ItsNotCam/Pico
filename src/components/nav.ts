@@ -39,20 +39,19 @@ function registerNavDropdowns(): void {
     const isExpanded: boolean = expanded === "true";
     infoDropdown.attr("aria-expanded", String(!isExpanded));
   });
-
+  
+  const infoSites = ["about.html", "careers.html", "contact.html", "site_map.html"]
   $("#primary-nav li").each(function () {
     let pageName = $(this).data("link");  
     let currentPageLocation = window.location.pathname;
     currentPageLocation = currentPageLocation.substring(currentPageLocation.lastIndexOf("/"))
       .replace("/", "");
 
-    const infoSites = ["about.html", "careers.html", "contact.html", "site_map.html"]
-
     let isSelectedPage = ( pageName === currentPageLocation )
-      || ( (currentPageLocation === "" || currentPageLocation === "/~cyoung35") && pageName === "index" )
+      || ( (currentPageLocation === undefined || currentPageLocation === "" || currentPageLocation === "/" || currentPageLocation === "  ") && pageName === "index.html" )
       || (this.id === "info-dropdown") && infoSites.includes(currentPageLocation);
 
-    console.log(pageName, currentPageLocation);
+    // console.log("name:", pageName, " location: \'", currentPageLocation, "\' isSelected:", isSelectedPage);
 
     if(isSelectedPage) {
       $(this).attr("data-selected", "true");
