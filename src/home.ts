@@ -1,5 +1,5 @@
 import $ from "jquery";
-import { registerMutualExclusion, redirect } from "./util";
+import { registerMutualExclusions, redirect } from "./util";
 
 const imgs = [
   $("#img-number-0"), 
@@ -7,7 +7,7 @@ const imgs = [
   $("#img-number-2")
 ];
 
-registerMutualExclusion(
+registerMutualExclusions(
   ".img-selector", 
   document.querySelectorAll(".img-selector")
 );

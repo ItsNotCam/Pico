@@ -1,6 +1,6 @@
 import $ from "jquery";
 
-export function registerMutualExclusion(selector: string, items: any): void {
+export function registerMutualExclusions(selector: string, items: any): void {
   $(selector).on("click", function () {
     if($(this).data("ignore-link")) {
       return;

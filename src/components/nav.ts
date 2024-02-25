@@ -1,13 +1,15 @@
 import $ from "jquery";
-import { redirect, registerMutualExclusion } from "../util";
+import { redirect, registerMutualExclusions } from "../util";
 
 $("#nav-wrapper").load("/components/nav.html #nav-wrapper", function () {
-  registerMutualExclusion(
-    "#primary-nav li",
-    document.querySelectorAll("#primary-nav li")
-  );
+  registerMutualExclusions("#primary-nav li", document.querySelectorAll("#primary-nav li"));
+  setPageTitle();
+  registerNavDropdowns();
+  registerNavLinks();
+  registerDropdownObserver()
+});
 
-  // set current page name for navigation
+function setPageTitle(): void {
   let page = window.location.pathname;
   page = page.substring(page.lastIndexOf("/"))
     .replace("/", "")
@@ -20,7 +22,10 @@ $("#nav-wrapper").load("/components/nav.html #nav-wrapper", function () {
     page = "site map";
   }
   $("#current-page").text(page);
+}
 
+
+function registerNavDropdowns(): void {
   $("#nav-dropdown-button").on("click", function () {
     const nav: JQuery = $("#primary-nav");
     const droppedDown: string | undefined = nav.attr("data-expanded");
@@ -49,17 +54,18 @@ $("#nav-wrapper").load("/components/nav.html #nav-wrapper", function () {
       $(this).attr("data-selected", "false");
     }
   })
+}
 
+function registerNavLinks() {
   $("#primary-nav li").on("click", function () {
     if (!$(this).data("ignore-link")) {
       redirect($(this));
     }
   });
+}
 
-  // Select the component
-  let component = document.querySelector("#info-dropdown");
-
-  // Create a new MutationObserver instance
+function registerDropdownObserver(): void {
+  let dropdown = $("#info-dropdown")
   let observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       if (
@@ -75,10 +81,7 @@ $("#nav-wrapper").load("/components/nav.html #nav-wrapper", function () {
     });
   });
 
-  if(component !== null) {
-  // Start observing the component for attribute changes
-   observer.observe(component, {
-      attributes: true, // this is to watch for attribute changes
-    });
+  if(dropdown !== null) {
+   observer.observe(dropdown.get(0) as Node, { attributes: true });
   }
-});
+}
