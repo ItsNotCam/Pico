@@ -2,24 +2,25 @@ import $ from "jquery";
 
 export function registerMutualExclusion(selector: string, items: any): void {
   $(selector).on("click", function () {
-    if($(this).data("ignore-link")){
+    if($(this).data("ignore-link")) {
       return;
     }
     
-    $(this).addClass("selected");
+    $(this).attr("data-selected", "true")
     items.forEach((item: any) => {
-      if (item !== this) {
-        $(item).removeClass("selected");
-      }
+      $(item).attr("data-selected", "false")
     });
   });
 }
 
 export function redirect(item: JQuery): void {
   const link: string = $(item).data("link");
-  if (window.location.pathname === link) {
+  const ignore: string = $(item).data("nav-hover");
+  if (!link || ignore === "true" || window.location.pathname === link) {
     return;
   }
+
+  console.log("redirecting to", link)
 
   $(function () {
     const pageOut: JQuery = $("<div/>", { class: "page-out" });

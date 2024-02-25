@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nav Only</title>
+    <title>Nav</title>
   </head>
   <body>
     <div id="nav-wrapper" class="navigation">
@@ -24,16 +24,16 @@
         </svg>
       </div>
       <ul id="primary-nav" aria-expanded="false" class="clr-6 museo">
-        <li class="h5 cursor-pointer selected" data-link="/index.html">
+        <li class="h5 cursor-pointer" data-link="/index.html" data-nav-hover="true" data-selected="false">
           <span class="pre-colon">::</span>home
         </li>
-        <li class="h5 cursor-pointer" data-link="/gallery.html">
+        <li class="h5 cursor-pointer" data-link="/gallery.html" data-nav-hover="true" data-selected="false">
           <span class="pre-colon">::</span>gallery
         </li>
-        <li class="h5 cursor-pointer" data-link="/product.html">
+        <li class="h5 cursor-pointer" data-link="/product.html" data-nav-hover="true" data-selected="false">
           <span class="pre-colon">::</span>nano
         </li>
-        <li class="h5 cursor-pointer" data-link="/purchase.html">
+        <li class="h5 cursor-pointer" data-link="/purchase.html" data-nav-hover="true" data-selected="false">
           <span class="pre-colon">::</span>purchase
         </li>
         <li
@@ -41,20 +41,24 @@
           class="h5 cursor-pointer li-dropdown"
           aria-expanded="false"
           data-ignore-link="true"
+          data-nav-hover="true"
         >
-          <span class="h5"><span class="pre-colon">::</span>info</span>
+          <span class="h5"><span class="pre-colon">::
+          </span>info</span>
           <span class="chevron"></span>
+        </li>
+        <li id="info-dropdown-items" data-nav-hover="false" data-selected="false" data-ignore-link="true">
           <ul class="fw-400">
-            <li data-link="/about.html">
+            <li data-link="/about.html" data-nav-hover="true" data-selected="false">
               <span class="pre-colon">::</span> about
             </li>
-            <li data-link="/careers.html">
+            <li data-link="/careers.html" data-nav-hover="true" data-selected="false">
               <span class="pre-colon">::</span> careers
             </li>
-            <li data-link="/contact.html">
+            <li data-link="/contact.html" data-nav-hover="true" data-selected="false">
               <span class="pre-colon">::</span> contact
             </li>
-            <li data-link="/map.html">
+            <li data-link="/map.html" data-nav-hover="true" data-selected="false">
               <span class="pre-colon">::</span> site map
             </li>
           </ul>

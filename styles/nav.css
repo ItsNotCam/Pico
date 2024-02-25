@@ -16,9 +16,13 @@
   display: none;
 }
 
+#primary-nav {
+  --nav-gap: 2rem;
+  position: relative;
+}
+
 .li-dropdown {
   position: relative;
-  height: auto;
 
   & .chevron {
     border-style: solid;
@@ -29,11 +33,11 @@
     right: 0.15em;
     position: absolute;
     bottom: 0.7em;
-    transform: rotate(135deg);
+    transform: rotate(-45deg);
     vertical-align: top;
     width: 0.45em;
 
-    transition: transform 0.35s linear;
+    transition: transform 0.2s ease;
   }
 
   & > ul {
@@ -68,22 +72,35 @@
   }
 }
 
-.li-dropdown[aria-expanded="true"] {
-  & .chevron {
-    transform: rotate(-45deg);
-  }
-  
-  & > ul {
-    height: 12rem;
+#info-dropdown-items {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute !important;
+  right: 0;
+  top: 3rem;
+  width: auto !important;
+  gap: 2rem;
+
+  transition: height 300ms, opacity 300ms;
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem !important;
   }
 }
 
+.li-dropdown[aria-expanded="true"] {
+  & .chevron {
+    transform: rotate(135deg);
+  }
+}
 
 .li-dropdown[aria-expanded="false"] > ul {
   /* display: none; */
   height: 0px;
 }
-
 
 .navigation {
   width: 100%;
@@ -102,11 +119,13 @@
 
 #primary-nav {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1.1fr 1fr;
+  grid-template-columns: repeat(5, minmax(6.5rem, 1.05fr));
   grid-gap: 1.6rem;
+  justify-items: center;
+  align-items: center;
 
-  & .selected,
-  li:hover {
+  & li[data-selected="true"],
+  li:hover[data-nav-hover="true"] {
     font-weight: 700;
 
     &::after {
@@ -114,9 +133,11 @@
     }
   }
 
+  & li[data-nav-hover="true"] {
+    cursor: pointer;
+    }
   & li {
     position: relative;
-    cursor: pointer;
     text-align: center;
     width: 100%;
 
@@ -149,38 +170,33 @@
   }
 }
 
-
 @media screen and (max-width: 1024px) {
-  #primary-nav {
-    position: absolute;
-    top: 4.5rem;
-    right: 0;
-    padding-inline: 5rem;
+  /* #info-dropdown {
+    display: none;
+  } */
+
+  #info-dropdown {
+    display: none;
+  }
+
+  #info-dropdown-items {
     display: flex;
-    gap: 3rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    overflow: visible;
+    position: relative !important;
+    top: 0;
 
-    /* background-color: var(--color-600); */
-    background-color: rgba(12,12,12,0.75);
-    color: var(--color-100);
-    overflow: hidden;
+    /* these are marked as important because my javascript is changing them dynamically on the style attribute directly */
+    height: auto !important;
+    opacity: 1 !important;
 
-    box-shadow: -1px 0px 5px rgb(23, 23, 23);
-    transition: height 0.5s;
-    height: 0;
-
-    & li::after {
-      background-color: var(--color-100);
+    & ul {
+      display: flex;
+      flex-direction: column;
+      gap: var(--nav-gap) !important;
     }
-
-    & .pre-colon {
-      display: none;
-    }
-
-    &[data-expanded="true"] {
-      height: calc(100vh - 4.5rem);
+    
+    & ul li {
+      font-size: 1.3rem !important;
     }
   }
 
@@ -195,13 +211,11 @@
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
-
-    display: flex;
     justify-content: space-between;
 
     transition: background-color 500ms;
 
-    & ul li {
+    & ul > li {
       display: flex;
       justify-content: left;
 
@@ -240,29 +254,94 @@
       }
     }
   }
-}
-
-/* mobile */
-@media screen and (max-width: 600px) {  
+  
   #primary-nav {
-    width: 100vw;
-    background-color: rgba(12,12,12,0.9);
-    
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow: auto;
+
+    gap: var(--nav-gap);
+    top: 4.5rem;
+    right: 0px;
+    padding-inline: 5rem;
+
+    /* background-color: var(--color-600); */
+    background-color: rgba(12,12,12,0.75);
+    color: var(--color-100);
+    overflow: hidden;
+
+    box-shadow: -1px 0px 5px rgb(23, 23, 23);
+    transition: height 0.5s;
+    height: 0;
+
     & li {
       width: 25%;
       left: 0;
       justify-content: center;
+      transition: background-color 300ms;
+
+      &::after {
+        display: none;
+      }
     }
 
-    &[data-expanded="true"]::after {
+    & li::after {
+      background-color: var(--color-100);
+    }
+
+    & li[data-nav-hover="true"][data-selected="false"] {
+      background-color: var(--color-600);
+
+      &:hover {
+        background-color: var(--color-500);
+      }
+    }
+    
+    & li[data-nav-hover="true"] {
+      font-weight: 500 !important;
+      width: 10rem;
+      padding-block: 0.5rem;
+      border-radius: 0.5rem;
+      background-color: var(--color-600);
+    }
+    
+
+    & li[data-selected="true"] {
+      cursor: default;
+      color: var(--color-500);  
+    }
+
+    & .pre-colon {
+      display: none;
+    }
+
+    &[data-expanded="true"] {
+      height: calc(100vh - 4.5rem);
+    }
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 600px) { 
+  #info-dropdown-items ul li {
+    justify-content: center;
+  }
+
+
+  #primary-nav {
+    width: 100vw;
+    background-color: rgba(12,12,12,0.9);
+    
+    /* &[data-expanded="true"]::after {
       position: fixed;
       content: "nav";
-      /* right: -1rem; */
       top: 10vh;
-      /* transform: rotate(-90deg); */
       color: var(--color-200);
       display: block;
       font-size: 4rem;
-    }
+    } */
   }
 }

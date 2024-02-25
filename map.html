@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="public/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2
+				?family=League+Spartan:wght@100..900
+				&family=MuseoModerno:ital,wght@0,100..900;1,100..900
+				&display=swap"
+      rel="stylesheet"
+    />
+
+    <script defer src="public/index.js"></script>
+    <title>Pico</title>
+  </head>
+  <body>
+    <div class="page-in"></div>
+    <div class="circles-container">
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+      <div class="circle-3"></div>
+    </div>
+    <main>
+      <div class="phone-img">
+        <img src="public/images/Phone.png" alt="phone" />
+      </div>
+      <div class="img-selectors">
+        <div class="img-selector selected" id="img-select-0"></div>
+        <div class="img-selector" id="img-select-1"></div>
+        <div class="img-selector" id="img-select-2"></div>
+      </div>
+      <div class="img-numbers museo fw-2">
+        <h1 id="img-number-0">01</h1>
+        <h1 id="img-number-1" style="opacity: 0">02</h1>
+        <h1 id="img-number-2" style="opacity: 0">03</h1>
+      </div>
+      <div class="main-container">
+        <div class="title-wrapper">
+          <div id="nav-wrapper"></div>
+          <div class="home-hero">
+            <h1 class="museo clr-6">pico.</h1>
+            <p class="clr-5 fw-4">
+              At pico, we take the word ‘innovation’ and throw it out the window
+              - we don’t innovate, we imitate.
+            </p>
+            <p class="hero-quote museo fw-5 clr-6">
+              let's make something you've already seen
+            </p>
+            <div class="hero-btn-container">
+              <button
+                class="btn btn-light museo fw-4"
+                data-link="/gallery.html"
+              >
+                discover
+              </button>
+              <button class="btn btn-dark museo fw-3" data-link="#">buy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div id="footer"></div>
+    </footer>
+  </body>
+</html>
