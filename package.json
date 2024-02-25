@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npx tsc && postcss -o public/styles.css styles/*.css",
     "ts-watch": "npx tsc --watch",
-    "postcss-watch": "postcss -o public/styles.css styles/*.css --watch"
+    "postcss-watch": "postcss -o public/styles.css styles/*.css --watch",
+		"dev": "npx webpack"
   },
   "author": "cam",
   "license": "ISC",
