@@ -1,7 +1,7 @@
 /* IMPORT ALL CSS FILES HERE */
 @import "./home.css";
-@import "./home_tablet.css";
-@import "./home_mobile.css";
+@import "./nav.css";
+@import "./footer.css";
 
 :root {
   --color-600: #3d3d3d;
@@ -137,16 +137,58 @@ h5,
   height: 100vh;
 }
 
-.hashtag {
-  position: absolute;
-  right: -11rem;
-  bottom: 0.5rem;
-  font-size: 1.2rem;
-  transform: rotate(-90deg);
-  text-orientation: sideways;
-  transform-origin: left;
+.btn {
+  border: none;
+  border-radius: 2rem;
+  width: 8em;
+  height: 2em;
+  padding-block: 0.35rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 500ms ease-in-out, color 800ms ease;
+  margin: 0.5rem;
+}
 
-  &::after {
-    content: "# technology x design";
+.btn-dark {
+  background-color: var(--color-600);
+  color: var(--color-100);
+}
+
+.btn-light {
+  padding-block: 2px;
+  border: 2px solid var(--color-600);
+  color: var(--color-600);
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+
+@keyframes blur-out {
+  from {
+    backdrop-filter: blur(0px);
+  }
+  to {
+    backdrop-filter: blur(5px);
+  }
+}
+
+@keyframes blur-in {
+  from {
+    backdrop-filter: blur(5px);
+    display: block;
+  }
+
+  to {
+    backdrop-filter: blur(0px);
+    display: none;
+  }
+}
+
+@keyframes op-blur-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 60%;
   }
 }
