@@ -169,7 +169,7 @@ h5,
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--color-500);
+  background-color: var(--color-600);
   transform-origin: top;
   z-index: 9999;
   pointer-events: none;
@@ -177,7 +177,7 @@ h5,
 
   &::after {
     content: "pico.";
-    font-size: 5rem;
+    font-size: 8rem;
     position: absolute;
     color: white;
     left: 50%;
