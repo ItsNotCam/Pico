@@ -1,7 +1,7 @@
 import $ from "jquery";
 import { redirect, registerMutualExclusions } from "../util";
 
-$("#nav-wrapper").load("/components/nav.html #nav-wrapper", function () {
+$("#nav-wrapper").load("components/nav.html #nav-wrapper", function () {
   registerMutualExclusions("#primary-nav li", document.querySelectorAll("#primary-nav li"));
   setPageTitle();
   registerNavDropdowns();
@@ -41,12 +41,18 @@ function registerNavDropdowns(): void {
   });
 
   $("#primary-nav li").each(function () {
-    const pageName = $(this).data("link");
-    const infoSites = ["/about.html", "/careers.html", "/contact.html", "/site_map.html"]
+    let pageName = $(this).data("link");  
+    let currentPageLocation = window.location.pathname;
+    currentPageLocation = currentPageLocation.substring(currentPageLocation.lastIndexOf("/"))
+      .replace("/", "");
 
-    let isSelectedPage = ( pageName === window.location.pathname )
-      || ( window.location.pathname === "/" && pageName === "/index.html" )
-      || (this.id === "info-dropdown") && infoSites.includes(window.location.pathname);
+    const infoSites = ["about.html", "careers.html", "contact.html", "site_map.html"]
+
+    let isSelectedPage = ( pageName === currentPageLocation )
+      || ( (currentPageLocation === "" || currentPageLocation === "/~cyoung35") && pageName === "index" )
+      || (this.id === "info-dropdown") && infoSites.includes(currentPageLocation);
+
+    console.log(pageName, currentPageLocation);
 
     if(isSelectedPage) {
       $(this).attr("data-selected", "true");
