@@ -11,7 +11,6 @@
   justify-content: center;
   /* align-items: center; */
   /* height: 100vh; */
-  overflow: hidden;
 }
 
 .gallery-page-title {
@@ -243,11 +242,11 @@
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(14, min(5.5vw, 200px));
-  grid-template-rows: repeat(14, min(5vh, 200px));
+  grid-template-columns: repeat(14, min(5.5vw, 150px));
+  grid-template-rows: repeat(14, min(5vh, 150px));
   grid-gap: 0.8rem;
   max-height: 100%;
-
+  
   img {
     object-fit: cover;
     width: 100%;

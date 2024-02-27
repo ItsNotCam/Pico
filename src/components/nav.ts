@@ -62,7 +62,11 @@ function registerNavDropdowns(): void {
 function registerNavLinks() {
   $("#primary-nav li").on("click", function () {
     if (!$(this).data("ignore-link")) {
-      redirect($(this));
+      const link = $(this).data("link");
+      const location = window.location.pathname.replace("/", "");
+      if(link !== location) {
+        redirect($(this));
+      }
     }
   });
 }
