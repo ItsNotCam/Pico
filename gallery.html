@@ -19,21 +19,71 @@
     <title>Pico</title>
   </head>
   <body>
-    <div class="page-in"></div>
-    <ul data-expanded="false" class="clr-6 museo" id="primary-nav">
-      <li class="h5 cursor-pointer" data-link="/index.html">
-        <span>::</span>home
-      </li>
-      <li class="h5 cursor-pointer selected" data-link="/gallery.html">
-        <span>::</span>gallery
-      </li>
-      <li class="h5 cursor-pointer" data-link="/product.html">
-        <span>::</span>nano
-      </li>
-      <li class="h5 cursor-pointer" data-link="/purchase.html">
-        <span>::</span>purchase
-      </li>
-      <li class="h5 cursor-pointer"><span>::</span>info</li>
-    </ul>
+    <header>
+      <div class="page-in"></div>
+      <div class="circles-container">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+        <div class="circle-3"></div>
+      </div>
+      <div class="top-navigation">
+        <div id="nav-wrapper"></div>
+      </div>
+    </header>
+    <main>
+      <div class="centered">
+        <div class="gallery-grid">
+          <div class="page-number">
+            <h1 class="h1 museo clr-3 fw-6">01.</h1>
+          </div>
+          <div class="img-box" id="img-box-1">
+            <div>
+              <img src="public/images/img1.jpeg" />
+              <img src="public/images/img2.jpeg" />
+              <img src="public/images/img3.jpeg" />
+            </div>
+          </div>
+          <div class="img-box" id="img-box-2">
+            <div>
+              <img src="public/images/img2.jpeg" />
+              <img src="public/images/img3.jpeg" />
+              <img src="public/images/img1.jpeg" />
+            </div>
+          </div>
+          <div class="img-box" id="img-box-3">
+            <div>
+              <img src="public/images/img3.jpeg" />
+              <img src="public/images/img2.jpeg" />
+              <img src="public/images/img1.jpeg" />
+            </div>
+          </div>
+          <div class="gallery-title">
+            <h1 class="museo h1">shot on nano.</h1>
+            <p>
+              The nano's camera is still experimental. Currently it works 100%
+              of the time, 70% of the time. These images are just stock images
+              from the internet.
+            </p>
+            <div>
+              <quote class="museo fw-6 h4">we're doing our best</quote>
+              <button class="btn btn-dark museo">buy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="gallery-img-selectors">
+        <div class="img-selector" id="img-box-select-0" data-selected="true"></div>
+        <div class="img-selector" id="img-select-1" data-selected="false"></div>
+        <div class="img-selector" id="img-select-2" data-selected="false"></div>
+        <div class="relative">
+          <div class="absolute">
+            <div class="img-play-pause" data-playing="false"></div>
+          </div>
+        </div>
+      </div> -->
+    </main>
+    <footer>
+      <div id="footer"></div>
+    </footer>
   </body>
 </html>

@@ -90,7 +90,6 @@
       transition: background-color 350ms;
     }
   }
-
 }
 
 .main-container {
@@ -140,6 +139,8 @@
   width: 85%;
   justify-content: center;
   text-align: left;
+
+  margin-top: 3rem;
 
   & p {
     font-size: 1.35rem;

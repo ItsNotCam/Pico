@@ -18,12 +18,10 @@ function setPageTitle(): void {
 
   if(page === "" || page === "index") {
     page = "home";
-  } else if(page === "map") {
-    page = "site map";
   }
+
   $("#current-page").text(page);
 }
-
 
 function registerNavDropdowns(): void {
   $("#nav-dropdown-button").on("click", function () {
