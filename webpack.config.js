@@ -8,6 +8,10 @@ module.exports = {
   mode: mode,
   entry: entry,
 
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".css"]
+  },
+
   module: {
     rules: [
       {

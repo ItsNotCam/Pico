@@ -9,7 +9,71 @@
 .centered {
   display: flex;
   justify-content: center;
+  /* align-items: center; */
+  /* height: 100vh; */
   overflow: hidden;
+}
+
+.gallery-page-title {
+  position: absolute;
+  right: -5rem;
+  top: 50%;
+  opacity: 0.2;
+  transform-origin: center;
+  transform: translateY(-50%) rotate(-90deg);
+  overflow: hidden !important;
+
+  & h1 {
+  letter-spacing: 0.1em;
+    font-size: 5rem;
+  }
+}
+
+.gallery-footer {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & ul {
+    color: inherit;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+
+    & li svg {
+      fill: var(--color-500);
+      cursor: pointer;
+    }
+  }
+}
+
+/* tablet */
+.gallery-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  width: 100%;
+  left: 0;
+
+  align-items: center;
+
+  & h1 {
+    font-size: 2rem;
+    padding-left: 1.5rem;
+  }
+
+  & ul {
+    justify-self: center;
+    gap: 3rem;
+  }
+
+  & ul li svg {
+    height: 2rem;
+  }
 }
 
 .gallery-img-selectors {
@@ -100,16 +164,14 @@
 }
 
 .gallery-title {
-  grid-column: 9 / 15;
+  grid-column: 8 / 14;
   grid-row: 2 / 7;
-
   display: flex;
   flex-direction: column;
-
-  margin-inline: min(5%, 2rem);
+  margin-block: auto;
+  margin-inline: auto;
   width: 90%;
   grid-gap: 0.5rem;
-  /* align-items: center; */
 
   & div {
     display: flex;
@@ -120,47 +182,56 @@
   }
 
   & h1 {
-    font-size: 5rem;
+    /* font-size: 3.5rem; */
+    font-size: max(min(7vh, 5vw), 2.5rem);
     position: relative;
     white-space: nowrap;
 
-    &::after {
+    &::before {
       content: "";
       position: absolute;
       left: -1rem;
-      bottom: 0.5rem;
+      bottom: 0.2rem;
       width: 6rem;
-      height: 0.35rem;
+      height: 0.12em;
       background-color: var(--color-600);
       border-radius: 2rem;
     }
 
-    &::before {
+    &::after {
       content: "(not)";
-      position: absolute;
-      left: 33rem;
-      top: 2rem;
+      /* position: absolute; */
+      /* left: 23rem; */
+      /* top: 1.2rem; */
+      /* left: min(7vh, 5vw); */
+      /* bottom: min(7vh, 5vw); */
+      padding-bottom: 5rem;
+      margin-bottom: 5rem;
       font-weight: 400;
       color: var(--color-400);
-      font-size: 1.5rem;
+      /* font-size: 1.2rem; */
+      font-size: 0.35em;
     }
   }
 
   & p {
-    font-size: 1.5rem;
+    /* font-size: 1.3rem; */
+    font-size: max(min(2.3vh, 2.1vw), 1.05rem);
     line-height: 1.2;
   }
 
   & quote {
     position: relative;
     padding-bottom: 1rem;
+    font-size: min(2.3vh, 2.1vw);
 
     &::after {
       content: "- everyone @ pico";
       position: absolute;
       left: 0.5rem;
-      top: 1.9rem;
-      font-size: 1rem;
+      top: calc(min(2.1vh, 2.2vw) + 1vh);
+      /* font-size: 1rem; */
+      font-size: 1.3vh;
       font-weight: 400;
     }
   }
@@ -172,10 +243,10 @@
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(15, min(5.5vw, 200px));
-  grid-template-rows: repeat(15, min(5vh, 200px));
+  grid-template-columns: repeat(14, min(5.5vw, 200px));
+  grid-template-rows: repeat(14, min(5vh, 200px));
   grid-gap: 0.8rem;
-  height: 100%;
+  max-height: 100%;
 
   img {
     object-fit: cover;
@@ -184,7 +255,7 @@
   }
 
   & .page-number {
-    grid-column: 1 / 4;
+    grid-column: 1 / 3;
     grid-row: 5 / 9;
 
     display: flex;
@@ -192,7 +263,8 @@
     align-items: flex-end;
 
     & h1 {
-      font-size: 12rem;
+      font-size: 10rem;
+      /* font-size: min(8vh, 10vw); */
       opacity: 35%;
     }
   }
@@ -206,12 +278,12 @@
   }
 
   & #img-box-1 {
-    grid-column: 4 / 9;
+    grid-column: 3 / 8;
     grid-row: 2 / 8;
   }
 
   & #img-box-2 {
-    grid-column: 2 / 9;
+    grid-column: 1 / 8;
     grid-row: 8 / 14;
 
     & div {
@@ -221,8 +293,34 @@
   }
 
   & #img-box-3 {
-    grid-column: 9 / 15;
+    grid-column: 8 / 14;
     grid-row: 7 / 14;
+
+    & div {
+      width: 90%;
+    }
+  }
+}
+
+.img-list {
+  display: none;
+}
+
+@media screen and (max-width: 1400px) {
+  .page-number h1 {
+    display: none !important;
+  }
+
+  #img-box-1 {
+    grid-column: 1 / 8 !important;
+    & div {
+      float: right;
+      width: 95%;
+    }
+  }
+
+  #img-box-3 {
+    grid-column: 8 / 15 !important;
   }
 }
 
@@ -235,36 +333,49 @@
     display: none;
   }
 
-  #img-1 {
-    grid-column: 2 / 8 !important;
-    grid-row: 2 / 9 !important;
-  }
+  .gallery-grid {
+    /* grid-template-rows: repeat(12, min(5vh, 200px)); */
 
-  #img-2 {
-    grid-column: 2 / 8 !important;
-  }
+    /* margin-top: 5rem; */
 
-  #img-3 {
-    grid-column: 8 / 15 !important;
-    grid-row: 8 / 15 !important;
+    #img-box-1 {
+      grid-column: 2 / 8 !important;
+      grid-row: 2 / 8;
+
+      & div {
+        float: right;
+        width: 100%;
+      }
+    }
+    
+    #img-box-2 {
+      grid-column: 2 / 8;
+
+      & > div {
+        width: 100% !important;
+      }
+    }
+
+    #img-box-3 {
+      grid-column: 8 / 15;
+      grid-row: 7 / 14;
+      width: 100%;
+    }
   }
 
   .gallery-title {
     grid-column: 8 / 14;
-    grid-row: 2 / 8;
-    grid-gap: 0;
+    grid-row: 1 / 8;
 
-    & h1 {
+    /* & h1 {
       font-size: 3rem;
+      position: relative;
+      white-space: nowrap;
+    } */
 
-      &::after {
-        bottom: -0.25rem;
-      }
-    }
-
-    & p {
+    /* & p {
       font-size: 1.25rem;
-    }
+    } */
 
     & div {
       align-items: flex-start;
@@ -273,6 +384,82 @@
 
       & button {
         align-self: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .img-list {
+    margin-top: 2rem;
+    position: relative;
+    display: flex;
+    width: 90%;
+
+    justify-self: center;
+
+    background-color: orange;
+  }
+
+  .gallery-grid {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+
+    & .img-box {
+      display: none;
+    }
+  }
+
+  .gallery-title {
+    width: 90%;
+
+    & h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+
+      &::before {
+        left: 17rem;
+        top: 0.5rem;
+      }
+
+      &::after {
+        left: 0;
+        bottom: -0.1rem;
+      }
+    }
+  }
+
+  footer {  
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 5rem;
+  }
+  
+  .gallery-footer {
+    display: flex;
+    justify-content: center;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  
+    & h1 {
+      display: none;
+    }
+  
+    & ul {
+      gap: 4rem;
+  
+      & li svg {
+        height: 2.5rem;
       }
     }
   }
