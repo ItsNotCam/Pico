@@ -242,8 +242,12 @@
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(14, min(5.5vw, 150px));
-  grid-template-rows: repeat(14, min(5vh, 150px));
+  
+  grid-template-columns: repeat(14, calc(75vw / 14));
+  grid-template-rows: repeat(14, calc(65vh / 14));
+
+  /* grid-template-columns: repeat(14, min(5.5vw, 150px));
+  grid-template-rows: repeat(14, min(5vh, 150px)); */
   grid-gap: 0.8rem;
   max-height: 100%;
   
@@ -336,6 +340,8 @@
     /* grid-template-rows: repeat(12, min(5vh, 200px)); */
 
     /* margin-top: 5rem; */
+
+    grid-template-rows: repeat(14, calc(70vh / 14));
 
     #img-box-1 {
       grid-column: 2 / 8 !important;
