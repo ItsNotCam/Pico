@@ -9,7 +9,7 @@ module.exports = {
   entry: entry,
 
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".css"]
+    extensions: [".ts", ".tsx", ".js", ".css"],
   },
 
   module: {
@@ -37,5 +37,5 @@ module.exports = {
 
   plugins: [new MiniCssExtractPlugin()],
 
-  watch: mode === "development",
+  // watch: mode === "development",
 };
