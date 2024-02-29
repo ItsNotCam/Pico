@@ -236,17 +236,19 @@
 
 /* tablet */
 @media screen and (max-width: 1024px) {
+  .main-container {
+    /* position: absolute; */
+    max-width: 95%;
+    margin-inline: auto;
+  }
+
   .title-wrapper {
     margin: 0 auto;
   }
 
   .phone-img {
-    width: 100vw;
-    height: 100vh;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    margin-inline: auto;
 
     & img {
       margin-inline: auto;
@@ -257,24 +259,10 @@
   .img-selectors {
     display: none;
   }
-
-  .phone-img {
-    height: 700px;
-    margin: 0;
-
-    & .blurred-circle {
-      height: 325px;
-      width: 325px;
-    }
-  }
 }
 
 /* mobile */
 @media screen and (max-width: 600px) {
-  .hero-btn-container {
-    flex-direction: column;
-  }
-
   .phone-img img {
     opacity: 1;
   }
@@ -285,6 +273,7 @@
     }
 
     & .hero-btn-container {
+      flex-direction: column;
       margin-top: 20rem;
     }
 
