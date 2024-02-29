@@ -244,11 +244,11 @@
 .gallery-grid {
   display: grid;
 
-  grid-template-columns: repeat(15, calc(75vw / 14));
-  grid-template-rows: repeat(14, calc(65vh / 14));
+  /* grid-template-columns: repeat(15, calc(75vw / 14));
+  grid-template-rows: repeat(14, calc(65vh / 14)); */
 
-  /* grid-template-columns: repeat(14, min(5.5vw, 150px));
-  grid-template-rows: repeat(14, min(5vh, 150px)); */
+  grid-template-columns: repeat(14, min(5.5vw, 150px));
+  grid-template-rows: repeat(14, min(5vh, 150px));
   grid-gap: 0.8rem;
   max-height: 100%;
 
@@ -301,7 +301,7 @@
     grid-row: 7 / 14;
 
     & div {
-      width: 90%;
+      width: 95%;
     }
   }
 }
