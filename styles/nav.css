@@ -106,6 +106,7 @@
   width: 100%;
   /* margin-bottom: 3rem; */
   z-index: 999 !important;
+  background-color: transparent;
 
   .nav-current-location,
   .hamburger {

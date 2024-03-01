@@ -10,6 +10,7 @@
 .centered {
   display: flex;
   justify-content: center;
+  height: 80vh;
   /* align-items: center; */
   /* height: 100vh; */
 }
@@ -263,7 +264,7 @@
     grid-row: 5 / 9;
 
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: flex-end;
 
     & h1 {

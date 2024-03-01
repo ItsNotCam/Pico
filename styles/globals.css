@@ -161,11 +161,11 @@ h5,
 
 .page-in,
 .page-out {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: var(--color-600);
   transform-origin: top;
   z-index: 99999 !important;

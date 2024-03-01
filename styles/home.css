@@ -31,7 +31,7 @@
 .page-title {
   position: absolute;
   top: 50%;
-  left: -18rem;
+  left: -11rem;
   transform: translateY(-50%);
   z-index: 999;
 
@@ -118,7 +118,7 @@
 .phone-img {
   position: absolute;
   height: 100%;
-  margin-left: max(10vw, 12vh);
+  margin-left: max(4vw, 4vh);
   top: 50%;
   transform: translateY(-50%);
 
@@ -142,7 +142,9 @@
   flex-direction: column;
   /* height: 100%; */
   margin-left: auto;
-  margin-right: 5rem;
+  /* margin-right: 5rem; */
+
+  margin-right: 8vw;
 
   width: 600px;
 }
