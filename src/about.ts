@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { redirect, registerMutualExclusions } from './util';
 
 // $(".icon-one").on("click", function() {
 $(".ham").on("click", function() {
@@ -11,3 +12,18 @@ $(".ham").on("click", function() {
 
   $(".about-nav").attr("aria-expanded", String(!isFoldedOut));
 })
+
+registerMutualExclusions(
+  "#nav-list", 
+  document.querySelectorAll("#nav-list")
+);
+
+$(".foldout li").on("click", function () {
+	if (!$(this).data("ignore-link")) {
+		const link = $(this).data("link");
+		const location = window.location.pathname.replace("/", "");
+		if(link !== location) {
+			redirect($(this));
+		}
+	}
+});

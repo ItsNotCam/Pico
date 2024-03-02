@@ -17,7 +17,7 @@
   &[aria-expanded="false"] svg {
     stroke: var(--color-600) !important;
   }
-  
+
   &[aria-expanded="true"] svg {
     stroke: var(--color-100) !important;
   }
@@ -41,13 +41,13 @@
     opacity: 0;
     transition: opacity 0.25s linear;
   }
-  
+
   &[aria-expanded="false"] {
     .foldout-screen-darken {
       pointer-events: none;
     }
   }
-  
+
   &[aria-expanded="true"] {
     .foldout-screen-darken {
       opacity: 0.5;
@@ -59,15 +59,14 @@
     width: 0;
     height: 100%;
     position: relative;
+    overflow: hidden;
 
-    background-color: var(--color-600);
+    background-color: rgba(35, 35, 35, 0.7);
+    backdrop-filter: blur(5px);
 
     transition: width 0.5s ease-in-out;
-    /* animation: grow-wide 0.5s ease-in-out forwards; */
-
-    font-size: 5vw;
-
-    box-shadow: 0 0 10px black;
+    font-size: max(4.5vw, 60px);
+    /* box-shadow: 0 0 10px rgb(14, 14, 14); */
 
     & h1 {
       position: absolute;
@@ -75,10 +74,52 @@
       top: 50%;
       text-orientation: sideways-right;
       transform: translateY(-50%) rotate(-90deg);
+      z-index: 2;
     }
 
-    & h1, span {
+    & h1,
+    span {
       font-size: 1em;
+    }
+
+    & ul {
+      font-size: 0.4em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5vw;
+      height: 100%;
+      width: 35%;
+      margin: 0 auto;
+    }
+
+    & li {
+      font-size: max(1.75vw, 22px);
+      cursor: pointer;
+      position: relative;
+      width: auto;
+
+      padding: 0.5em;
+      padding-inline: 0.5em;
+      background-color: rgb(62, 62, 62);
+      border-radius: 0.5rem;
+      font-weight: 300;
+
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+
+      transition: background-color 0.2s linear;
+
+      &:hover[data-selected="false"] {
+        background-color: var(--color-400);
+      }
+
+      &[data-selected="true"] {
+        background-color: rgba(46, 46, 46, 0.8);
+        color: var(--color-300);
+        cursor: not-allowed;
+      }
     }
   }
 
@@ -88,8 +129,12 @@
 }
 
 @keyframes grow-wide {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .about-hero {
@@ -367,5 +412,23 @@
 
   .about-credits {
     display: flex;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .foldout h1 {
+    display: none;
+  }
+
+  .foldout ul {
+    padding: 2rem !important;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw !important;
+  }
+
+  .foldout ul,
+  .foldout li {
+    width: 100% !important;
   }
 }
