@@ -16,7 +16,7 @@
   display: none;
 }
 
-#primary-nav {
+.primary-nav-list {
   --nav-gap: 2rem;
   position: relative;
 }
@@ -115,7 +115,7 @@
   }
 }
 
-#primary-nav {
+.primary-nav-list {
   display: grid;
   grid-template-columns: repeat(5, minmax(6.5rem, 1.05fr));
   grid-gap: 1.6rem;
@@ -159,7 +159,7 @@
       left: 10%;
       bottom: -0.4rem;
 
-      transition: width 200ms;
+      transition: width 100ms;
     }
 
     & svg {
@@ -250,7 +250,7 @@
     }
   }
 
-  #primary-nav {
+  .primary-nav-list {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -323,7 +323,7 @@
     justify-content: center;
   }
 
-  #primary-nav {
+  .primary-nav-list {
     width: 100vw;
     background-color: rgba(12, 12, 12, 0.9);
   }
