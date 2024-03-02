@@ -15,17 +15,44 @@
 }
 
 .product-main-hero {
+  /* position: relative; */
+  overflow: visible;
+  
   background: url("../public/images/Phone.png");
   background-position: 50% 50%;
-  background-size: max(566px, min(50vw, 1000px));
+  background-size: clamp(560px, 70vw, 950px);
   background-repeat: no-repeat;
 
-  height: 85svh;
-  left: 50%;
+  &::after {
+    /* content: ""; */
+    position: absolute;
+    overflow: visible;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: url("../public/images/Phone.png");
+    /* background-position: 50% 50%; */
+    background-position: 50% 50%;
+    background-size: clamp(600px, 70vw, 900px);
+    background-repeat: no-repeat;
+
+    height: 100%;
+    width: 100%;
+
+    /* height: auto;
+    width: auto; */
+
+    z-index: -1;
+  }
+
+  /* position: relative; */
+
+  height: max(85svh, 650px);
+  /* left: 50%; */
 
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
 
   margin-bottom: 5rem;
 }
@@ -36,7 +63,7 @@
 
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
 }
 
 .product__title {
@@ -49,11 +76,11 @@
 
   & h1 {
     margin-bottom: -0.5em;
-    font-size: max(6.5rem, 1em);
+    font-size: max(6.5rem, 0.9em);
   }
 
   & h2 {
-    font-size: max(2.5rem, 0.35em);
+    font-size: max(2.5rem, 0.3em);
   }
 }
 
@@ -61,15 +88,15 @@
   grid-column: 2 / 3;
   grid-row: 3 / 4;
 
-  font-size: clamp(1.35rem, 2vw, 1.855rem);
+  font-size: clamp(1.6rem, 2vw, 1.855rem);
 
   & p {
     padding-block: 0.6em;
     padding-inline: 0.5em;
-    background-color: rgba(240, 240, 240, 0.5);
+    background-color: rgba(240, 240, 240, 0.2);
     border-radius: 2rem;
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
 
     font-size: 0.75em;
   }
@@ -94,6 +121,7 @@
     padding-block: 0.15em;
 
     font-size: 0.8em;
+    cursor: pointer;
   }
 }
 
@@ -125,13 +153,24 @@
   opacity: 25%;
 }
 
+.product-description {
+  padding-inline: 3rem;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 1024px) {
   .product-page-title {
     display: none;
   }
 }
 
-.product-description {
-  padding-inline: 3rem;
-  margin: 0 auto;
+@media screen and (max-width: 600px) {
+  .product__title h1 {
+    font-size: 1.75em;
+  }
+
+  
+  .product__buy {
+    justify-content: center;
+  }
 }
