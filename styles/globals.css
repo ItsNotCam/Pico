@@ -31,6 +31,10 @@ img {
   display: block;
 }
 
+a {
+  color: var(--color-600);
+}
+
 ul {
   list-style: none;
 }
@@ -190,17 +194,11 @@ h5,
 }
 
 .page-in {
-  /* backdrop-filter: blur(10px); */
-  animation: 
-    /* blur-in 1.25s 200ms cubic-bezier(0.56, 0.33, 0.18, 0.94) forwards, */ fade-in
-    1s 1s ease-out forwards;
+  animation: fade-in 1s 1s ease-out forwards;
 }
 
 .page-out {
-  /* animation: blur-out 500ms ease-out forwards; */
-  animation: 
-    /* blur-out 1.25s 200ms cubic-bezier(0.56, 0.33, 0.18, 0.94) forwards, */ fade-out
-    0.5s ease-out forwards;
+  animation: fade-out 0.5s ease-out forwards;
 }
 
 @keyframes blur-out {

@@ -1,6 +1,4 @@
 .top-navigation {
-  /* position: absolute; */
-  /* padding-top: 3rem; */
   padding-top: min(5vh, 3rem);
   display: flex;
   align-items: center;
@@ -11,8 +9,6 @@
   display: flex;
   justify-content: center;
   height: 80vh;
-  /* align-items: center; */
-  /* height: 100vh; */
 }
 
 .gallery-page-title {
@@ -183,7 +179,6 @@
   }
 
   & h1 {
-    /* font-size: 3.5rem; */
     font-size: max(min(7vh, 5vw), 2.5rem);
     position: relative;
     white-space: nowrap;
@@ -201,22 +196,15 @@
 
     &::after {
       content: "(not)";
-      /* position: absolute; */
-      /* left: 23rem; */
-      /* top: 1.2rem; */
-      /* left: min(7vh, 5vw); */
-      /* bottom: min(7vh, 5vw); */
       padding-bottom: 5rem;
       margin-bottom: 5rem;
       font-weight: 400;
       color: var(--color-400);
-      /* font-size: 1.2rem; */
       font-size: 0.35em;
     }
   }
 
   & p {
-    /* font-size: 1.3rem; */
     font-size: max(min(2.3vh, 2.1vw), 1.05rem);
     line-height: 1.2;
   }
@@ -231,7 +219,6 @@
       position: absolute;
       left: 0.5rem;
       top: calc(min(2.1vh, 2.2vw) + 1vh);
-      /* font-size: 1rem; */
       font-size: 1.3vh;
       font-weight: 400;
     }
@@ -245,11 +232,8 @@
 .gallery-grid {
   display: grid;
 
-  /* grid-template-columns: repeat(15, calc(75vw / 14));
-  grid-template-rows: repeat(14, calc(65vh / 14)); */
-
-  grid-template-columns: repeat(14, min(5.5vw, 150px));
-  grid-template-rows: repeat(14, min(5vh, 150px));
+  grid-template-columns: repeat(15, min(5.5vw, 150px));
+  grid-template-rows: repeat(15, min(5vh, 150px));
   grid-gap: 0.8rem;
   max-height: 100%;
 
@@ -357,11 +341,6 @@
 
   .gallery-grid {
     grid-template-columns: repeat(14, calc(68vw / 14));
-    /* grid-template-rows: repeat(12, min(5vh, 200px)); */
-
-    /* margin-top: 5rem; */
-
-    /* grid-template-rows: repeat(14, calc(70vh / 14)); */
 
     #img-box-1 {
       grid-column: 1 / 8 !important;
@@ -369,16 +348,11 @@
 
       & div {
         float: right;
-        /* width: 100%; */
       }
     }
 
     #img-box-2 {
       grid-column: 1 / 8;
-
-      /* & > div {
-        width: 100% !important;
-      } */
     }
 
     #img-box-3 {
@@ -393,16 +367,6 @@
   .gallery-title {
     grid-column: 8 / 14;
     grid-row: 1 / 8;
-
-    /* & h1 {
-      font-size: 3rem;
-      position: relative;
-      white-space: nowrap;
-    } */
-
-    /* & p {
-      font-size: 1.25rem;
-    } */
 
     & div {
       align-items: flex-start;
