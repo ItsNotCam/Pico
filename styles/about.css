@@ -60,7 +60,7 @@
 
   border-bottom: 2px solid gray;
 
-  padding: 4em 2.5em 4em 2.5em;
+  padding: 4em 2.5em;
 
   & .description {
     grid-column: 1 / 3;
@@ -70,7 +70,7 @@
     width: 100%;
 
     & p {
-      font-size: 1.25vw;
+      font-size: 1.3vw;
       line-height: 1.5;
       letter-spacing: 0.075em;
       width: 80%;
@@ -169,7 +169,7 @@
   grid-column: 2 / 4;
   grid-row: 2 / 3;
   display: grid;
-  grid-template-columns: 16vw 2fr;
+  grid-template-columns: 18vw 2fr;
 }
 
 .about-shadow {
@@ -190,7 +190,7 @@
   }
 }
 
-.about-credits__description {
+.credits__info {
   display: flex;
   align-items: center;
   justify-content: center;
