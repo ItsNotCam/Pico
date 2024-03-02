@@ -72,7 +72,6 @@
       position: absolute;
       right: -1.5em;
       top: 50%;
-      text-orientation: sideways-right;
       transform: translateY(-50%) rotate(-90deg);
       z-index: 2;
     }
