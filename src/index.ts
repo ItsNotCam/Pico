@@ -12,3 +12,4 @@ import "./components/footer.ts";
 import "./util.ts";
 import "./gallery.ts";
 import "./home.ts";
+import "./about.ts";
