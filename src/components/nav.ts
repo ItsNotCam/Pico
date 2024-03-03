@@ -2,21 +2,25 @@ import $ from "jquery";
 import { redirect, registerMutualExclusions } from "../util";
 
 $("#nav-wrapper").load("components/nav.html #nav-wrapper", function () {
-  registerMutualExclusions("#primary-nav li", document.querySelectorAll("#primary-nav li"));
+  registerMutualExclusions(
+    "#primary-nav li",
+    document.querySelectorAll("#primary-nav li")
+  );
   setPageTitle();
   registerNavDropdowns();
   registerNavLinks();
-  registerDropdownObserver()
+  registerDropdownObserver();
 });
 
 function setPageTitle(): void {
   let page = window.location.pathname;
-  page = page.substring(page.lastIndexOf("/"))
+  page = page
+    .substring(page.lastIndexOf("/"))
     .replace("/", "")
     .replace(".html", "")
     .replace("_", " ");
 
-  if(page === "" || page === "index") {
+  if (page === "" || page === "index") {
     page = "home";
   }
 
@@ -37,26 +41,39 @@ function registerNavDropdowns(): void {
     const isExpanded: boolean = expanded === "true";
     infoDropdown.attr("aria-expanded", String(!isExpanded));
   });
-  
-  const infoSites = ["about.html", "careers.html", "contact.html", "site_map.html"]
+
+  const infoSites = [
+    "about.html",
+    "careers.html",
+    "contact.html",
+    "site_map.html",
+  ];
   $("#primary-nav li").each(function () {
-    let pageName = $(this).data("link");  
+    let pageName = $(this).data("link");
     let currentPageLocation = window.location.pathname;
-    currentPageLocation = currentPageLocation.substring(currentPageLocation.lastIndexOf("/"))
+    currentPageLocation = currentPageLocation
+      .substring(currentPageLocation.lastIndexOf("/"))
       .replace("/", "");
 
-    let isSelectedPage = ( pageName === currentPageLocation )
-      || ( (currentPageLocation === undefined || currentPageLocation === "" || currentPageLocation === "/" || currentPageLocation === "  ") && pageName === "index.html" )
-      || (this.id === "info-dropdown") && infoSites.includes(currentPageLocation);
+    const isCurrentPage = pageName === currentPageLocation;
+    const isHome =
+      (currentPageLocation === undefined ||
+        currentPageLocation === "" ||
+        currentPageLocation === "/" ||
+        currentPageLocation === "  ") &&
+      pageName === "index.html";
+    const isInInfo =
+      this.id === "info-dropdown" && infoSites.includes(currentPageLocation);
 
+    const isSelectedPage = isCurrentPage || isHome || isInInfo;
+
+    // let isSelectedPage = ( pageName === currentPageLocation )
+    //   || ( (currentPageLocation === undefined || currentPageLocation === "" || currentPageLocation === "/" || currentPageLocation === "  ") && pageName === "index.html" )
+    //   || (this.id === "info-dropdown") && infoSites.includes(currentPageLocation);
     // console.log("name:", pageName, " location: \'", currentPageLocation, "\' isSelected:", isSelectedPage);
 
-    if(isSelectedPage) {
-      $(this).attr("data-selected", "true");
-    } else {
-      $(this).attr("data-selected", "false");
-    }
-  })
+    $(this).attr("data-selected", String(isSelectedPage));
+  });
 }
 
 function registerNavLinks() {
@@ -64,7 +81,7 @@ function registerNavLinks() {
     if (!$(this).data("ignore-link")) {
       const link = $(this).data("link");
       const location = window.location.pathname.replace("/", "");
-      if(link !== location) {
+      if (link !== location) {
         redirect($(this));
       }
     }
@@ -72,23 +89,25 @@ function registerNavLinks() {
 }
 
 function registerDropdownObserver(): void {
-  let dropdown = $("#info-dropdown")
+  let dropdown = $("#info-dropdown");
   let observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       if (
         mutation.type === "attributes" &&
         mutation.attributeName === "aria-expanded"
       ) {
-        const expanded = (mutation.target as unknown as {ariaExpanded: string}).ariaExpanded === "true";
+        const expanded =
+          (mutation.target as unknown as { ariaExpanded: string })
+            .ariaExpanded === "true";
         $("#info-dropdown-items").css({
-          "height": expanded ? "10rem" : "0",
-          "opacity": expanded ? 1 : 0
-        })
+          height: expanded ? "10rem" : "0",
+          opacity: expanded ? 1 : 0,
+        });
       }
     });
   });
 
-  if(dropdown !== null) {
-   observer.observe(dropdown.get(0) as Node, { attributes: true });
+  if (dropdown !== null) {
+    observer.observe(dropdown.get(0) as Node, { attributes: true });
   }
 }
