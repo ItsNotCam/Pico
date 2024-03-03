@@ -160,7 +160,7 @@
     }
 
     &::before {
-      content: "who is pico?";
+      content: "what is this site?";
       font-family: "League Spartan", "sans-serif";
       position: absolute;
       left: 2em;
