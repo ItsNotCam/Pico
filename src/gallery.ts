@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 // temporary solution until nav and footer are manually merged with final pages
 setTimeout(() => {
 	$("#info-dropdown > span").on("click", function () {

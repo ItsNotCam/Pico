@@ -5,6 +5,15 @@
   --color-300: #a6a6a6;
   --color-200: #e2e2e2;
   --color-100: #ffffff;
+
+  --fs--2: clamp(0.7813rem, 0.6356rem + 0.7283vi, 1.2rem);
+  --fs--1: clamp(0.9375rem, 0.7418rem + 0.9783vi, 1.5rem);
+  --fs-0: clamp(1.125rem, 0.8641rem + 1.3043vi, 1.875rem);
+  --fs-1: clamp(1.35rem, 1.0043rem + 1.7283vi, 2.3438rem);
+  --fs-2: clamp(1.62rem, 1.1645rem + 2.2777vi, 2.9297rem);
+  --fs-3: clamp(1.944rem, 1.3464rem + 2.988vi, 3.6621rem);
+  --fs-4: clamp(2.3328rem, 1.552rem + 3.9041vi, 4.5776rem);
+  --fs-5: clamp(2.7994rem, 1.7828rem + 5.0829vi, 5.722rem);
 }
 
 * {
@@ -139,15 +148,14 @@ h5,
 }
 
 .btn {
+  font-size: clamp(22px, 1.7vw, 30px);
   border: none;
-  border-radius: 2rem;
-  width: 8em;
-  height: 2em;
-  padding-block: 0.35rem;
-  font-size: 1.5rem;
+  border-radius: 2vw;
+  width: clamp(150px, 12vw, 220px);
+  height: clamp(46px, 3vw, 60px);
   cursor: pointer;
   transition: background-color 500ms ease-in-out, color 800ms ease;
-  margin: 0.5rem;
+  /* margin: 1vw; */
 }
 
 .btn-dark {

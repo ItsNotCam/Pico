@@ -100,7 +100,7 @@ function registerDropdownObserver(): void {
           (mutation.target as unknown as { ariaExpanded: string })
             .ariaExpanded === "true";
         $("#info-dropdown-items").css({
-          height: expanded ? "10rem" : "0",
+          height: expanded ? "15vw" : "0",
           opacity: expanded ? 1 : 0,
         });
       }

@@ -6,13 +6,9 @@
   grid-template-rows: 2.5fr 1fr;
 }
 
-.ham {
-  height: min(4vw, 65px);
-  width: min(4vw, 65px);
-  position: absolute;
-  z-index: 2;
-  right: 2vw;
-  top: 1vw;
+& .ham {
+  height: min(4vw, 60px);
+  width: min(4vw, 60px);
 
   &[aria-expanded="false"] svg {
     stroke: var(--color-600) !important;
@@ -30,6 +26,13 @@
   z-index: 1;
   /* position: absolute;
   right: 0; */
+  
+  & .ham {
+    position: absolute;
+    z-index: 2;
+    right: 2vw;
+    top: 1vw;
+  }
 
   & .foldout-screen-darken {
     position: fixed;

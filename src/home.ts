@@ -27,4 +27,3 @@ $(".img-selector").on("click", function () {
     });
   })
 });
-
