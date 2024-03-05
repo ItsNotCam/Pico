@@ -2,24 +2,24 @@
 .circle-2,
 .circle-3 {
   position: absolute;
-  border: 35px solid rgba(16, 16, 16, 0.05);
+  border: 2.2rem solid rgba(16, 16, 16, 0.05);
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
 
 .circle-1 {
-  width: 400px;
-  height: 400px;
+  width: 25rem;
+  height: 25rem;
 }
 
 .circle-2 {
-  width: 525px;
-  height: 525px;
+  width: 32.8125rem;
+  height: 32.8125rem;
 }
 
 .circle-3 {
-  width: 400px;
-  height: 400px;
+  width: 25rem;
+  height: 25rem;
   right: 0;
   transform: translate(60%, -60%);
 }
@@ -31,13 +31,15 @@
 .page-title {
   position: absolute;
   top: 50%;
-  left: -8vw;
+  /* left: clamp(-5.3125rem, -8vw, -6rem); */
+  margin-left: max(-7.0625rem, -8vw);
   transform: translateY(-50%);
   z-index: 999;
-
+  /* left: -8vw;  */
+  
   & h1 {
-    font-size: 8vw;
     opacity: 0.25;
+    font-size: clamp(5.3125rem, 8vw, 7rem);
     transform: rotate(90deg);
     transform-origin: center;
   }
@@ -69,12 +71,12 @@
     opacity: 43%;
   }
   & h2 {
-    font-size: 120px;
+    font-size: 7.5rem;
     opacity: 35%;
     margin-top: 10rem;
   }
   & h3 {
-    font-size: 85px;
+    font-size: 5.3rem;
     opacity: 25%;
     margin-top: 7rem;
   }
@@ -149,7 +151,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  width: max(85%, 490px);
+  width: max(85%, 30.6rem);
   justify-content: center;
   text-align: left;
 
@@ -199,10 +201,10 @@
 
   &::after {
     content: "";
-    height: max(275px, 19vw);
-    width: max(275px, 19vw);
+    height: max(17.2rem, 19vw);
+    width: max(17.2rem, 19vw);
     position: absolute;
-    border: max(30px, 2vw) solid rgba(12, 12, 12, 0.05);
+    border: max(1.875rem, 2vw) solid rgba(12, 12, 12, 0.05);
     border-radius: 50%;
     align-self: center;
     z-index: -1;
@@ -213,7 +215,7 @@
     margin: 1rem auto;
     align-items: center;
     justify-content: center;
-    gap: max(26px, 2vw);
+    gap: max(1.625rem, 2vw);
   }
 
   & .hero-quote {
@@ -239,7 +241,7 @@
   }
 }
 
-@media screen and (max-width: 1650px) {
+@media screen and (max-width: 87.5rem) {
   .phone-img img {
     opacity: 0.5;
   }
@@ -250,7 +252,7 @@
 }
 
 /* tablet */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 64rem) {
   .main-container {
     max-width: 95%;
     margin-inline: auto;
@@ -280,7 +282,7 @@
 }
 
 /* mobile */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 37.5rem) {
   .phone-img img {
     opacity: 1;
   }

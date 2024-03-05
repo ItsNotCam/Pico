@@ -181,7 +181,7 @@
     white-space: nowrap;
 
     &::after {
-      content: "who is pico?";
+      content: "what is this place?";
       position: absolute;
       left: 2.25em;
       bottom: -0.2em;
@@ -380,6 +380,16 @@
 @media screen and (max-width: 1500px) {
   .about-body__info > p {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .credits__title {
+    display: none;
+  }
+
+  .credits__info {
+    grid-column: 1 / 3;
   }
 }
 
