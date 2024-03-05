@@ -1,20 +1,6 @@
 import $ from "jquery";
 import { redirect, registerMutualExclusions } from "./util";
 
-$("#about-ham").on("click", function () {
-  const isFoldedOut: boolean = $("#about-nav .foldout").attr("aria-expanded") === "true";
-  $("#about-nav .foldout").attr("aria-expanded", String(!isFoldedOut));
-
-  setTimeout(
-    () => {
-      $("#about-ham").attr("aria-expanded", String(!isFoldedOut));
-    },
-    isFoldedOut ? 150 : 400
-  );
-
-  $("#about-nav").attr("aria-expanded", String(!isFoldedOut));
-});
-
 registerMutualExclusions("#nav-list", document.querySelectorAll("#nav-list"));
 
 $("#primary-nav li").on("click", function () {

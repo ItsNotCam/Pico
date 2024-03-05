@@ -40,10 +40,10 @@ const foldoutSelectorMaps: FoldoutSelector[] = [
     foldedOutDelay: 300,
     foldedInDelay: 150,
   },
-  { 
-    selector: "about", 
-    foldedOutDelay: 150, 
-    foldedInDelay: 400 
+  {
+    selector: "about",
+    foldedOutDelay: 150,
+    foldedInDelay: 400,
   },
   {
     selector: "careers",
@@ -65,15 +65,17 @@ export function registerNavFoldout({
     const isFoldedOut: boolean = $foldout.attr("aria-expanded") === "true";
     const opp: string = String(!isFoldedOut);
 
-    console.log("was", isFoldedOut, "is", opp);
+    console.log("was", isFoldedOut, "is", String(!isFoldedOut));
 
-    $foldout.attr("aria-expanded", opp);
+    $foldout.attr("aria-expanded", String(!isFoldedOut));
 
     setTimeout(
-      () => { $(`#${selector}-ham`).attr("aria-expanded", opp); },
+      () => {
+        $(`#${selector}-ham`).attr("aria-expanded", String(!isFoldedOut));
+      },
       isFoldedOut ? foldedOutDelay : foldedInDelay
     );
 
-    $(`#${selector}-nav`).attr("aria-expanded", opp);
+    $(`#${selector}-nav`).attr("aria-expanded", String(!isFoldedOut));
   });
 }
