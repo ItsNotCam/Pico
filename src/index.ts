@@ -40,10 +40,10 @@ const foldoutSelectorMaps: FoldoutSelector[] = [
     foldedOutDelay: 300,
     foldedInDelay: 150,
   },
-  { 
-    selector: "about", 
-    foldedOutDelay: 150, 
-    foldedInDelay: 400 
+  {
+    selector: "about",
+    foldedOutDelay: 150,
+    foldedInDelay: 400,
   },
   {
     selector: "careers",
@@ -63,17 +63,28 @@ export function registerNavFoldout({
   $(`#${selector}-ham`).on("click", function () {
     const $foldout = $(`#${selector}-nav .foldout`);
     const isFoldedOut: boolean = $foldout.attr("aria-expanded") === "true";
-    const opp: string = String(!isFoldedOut);
 
-    console.log("was", isFoldedOut, "is", opp);
+    // close menu when clicking off of it
+    $(`#${selector}-nav .foldout-screen-darken`).on("click", function () {
+      if ($foldout.attr("aria-expanded") === "true") {
+        $(`#${selector}-nav`).attr("aria-expanded", "false");
+        $(`#${selector}-nav .foldout`).attr("aria-expanded", "false");
+        $(`#${selector}-ham`).attr("aria-expanded", "false");
 
-    $foldout.attr("aria-expanded", opp);
+        $("#reverse").each(function () {
+          (this as unknown as SVGAnimateElement).beginElement();
+        });
+      }
+    });
 
+    $foldout.attr("aria-expanded", String(!isFoldedOut));
     setTimeout(
-      () => { $(`#${selector}-ham`).attr("aria-expanded", opp); },
+      () => {
+        $(`#${selector}-ham`).attr("aria-expanded", String(!isFoldedOut));
+      },
       isFoldedOut ? foldedOutDelay : foldedInDelay
     );
 
-    $(`#${selector}-nav`).attr("aria-expanded", opp);
+    $(`#${selector}-nav`).attr("aria-expanded", String(!isFoldedOut));
   });
 }
