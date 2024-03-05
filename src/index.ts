@@ -79,9 +79,7 @@ export function registerNavFoldout({
 
     $foldout.attr("aria-expanded", String(!isFoldedOut));
     setTimeout(
-      () => {
-        $(`#${selector}-ham`).attr("aria-expanded", String(!isFoldedOut));
-      },
+      () => $(`#${selector}-ham`).attr("aria-expanded", String(!isFoldedOut)),
       isFoldedOut ? foldedOutDelay : foldedInDelay
     );
 
