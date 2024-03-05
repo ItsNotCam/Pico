@@ -63,12 +63,21 @@ export function registerNavFoldout({
   $(`#${selector}-ham`).on("click", function () {
     const $foldout = $(`#${selector}-nav .foldout`);
     const isFoldedOut: boolean = $foldout.attr("aria-expanded") === "true";
-    const opp: string = String(!isFoldedOut);
 
-    console.log("was", isFoldedOut, "is", String(!isFoldedOut));
+    // close menu when clicking off of it
+    $(`#${selector}-nav .foldout-screen-darken`).on("click", function () {
+      if ($foldout.attr("aria-expanded") === "true") {
+        $(`#${selector}-nav`).attr("aria-expanded", "false");
+        $(`#${selector}-nav .foldout`).attr("aria-expanded", "false");
+        $(`#${selector}-ham`).attr("aria-expanded", "false");
+
+        $("#reverse").each(function () {
+          (this as unknown as SVGAnimateElement).beginElement();
+        });
+      }
+    });
 
     $foldout.attr("aria-expanded", String(!isFoldedOut));
-
     setTimeout(
       () => {
         $(`#${selector}-ham`).attr("aria-expanded", String(!isFoldedOut));
