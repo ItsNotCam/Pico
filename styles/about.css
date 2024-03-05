@@ -227,7 +227,7 @@
 }
 
 .about-body__info > p {
-  font-size: clamp(1.2rem, 1.3vw, 1.5rem);
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
   letter-spacing: 0.1em;
   line-height: 1.25;
   width: 85%;
@@ -285,7 +285,7 @@
   }
 
   & p {
-    font-size: 1.5vw;
+    font-size: clamp(1.25rem, calc(1.5vw + 1rem), 1.55rem);
     line-height: 1.2;
   }
 
@@ -335,6 +335,10 @@
   justify-content: center;
   padding-inline: 4vw;
   align-items: center;
+
+  & a {
+    cursor: pointer;
+  }
 }
 
 .credits__title {
