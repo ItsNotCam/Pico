@@ -258,7 +258,7 @@
   gap: 1.5vw;
 
   & h1 {
-    font-size: 4vw;
+    font-size: max(3.25rem, 4vw);
     position: relative;
     margin-bottom: 2.5vw;
 
@@ -290,7 +290,7 @@
   }
 
   & quote {
-    font-size: 1.35vw;
+    font-size: clamp(1.15rem, calc(1.3vw + 1rem), 1.25rem);
     position: relative;
 
     &::after {
