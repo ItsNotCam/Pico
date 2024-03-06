@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import $ from "jquery";
 
 // Define a function to run a carousel animation on a set of images.
 const runCarousel = (selector: string, direction: string): void => {
@@ -22,11 +22,6 @@ const runCarousel = (selector: string, direction: string): void => {
 
   // Function to transition to the next image in the carousel.
   const nextImage = () => {
-    if(selector.includes("1")) {
-      CURRENT_IMAGE = curIdx % ($images.length - 1);
-      updateImageCollectionNumber();
-    }
-
     // Apply transition effect to each image.
     $images.each(function () {
       const transitionDuration: number = curIdx === 0 ? 0 : TRANSITION_TIME_MS;
@@ -38,7 +33,8 @@ const runCarousel = (selector: string, direction: string): void => {
     // Update the current index for the next image and set a timeout for the next transition.
     curIdx = (curIdx + 1) % $images.length;
 
-    const timeoutDelay: number = curIdx === 0 ? TRANSITION_TIME_MS : DELAY_MS + TRANSITION_TIME_MS;
+    const timeoutDelay: number =
+      curIdx === 0 ? TRANSITION_TIME_MS : DELAY_MS + TRANSITION_TIME_MS;
     setTimeout(nextImage, timeoutDelay);
   };
 
@@ -47,13 +43,17 @@ const runCarousel = (selector: string, direction: string): void => {
 };
 
 const updateImageCollectionNumber = () => {
- $(".page-number h1").html(`0${CURRENT_IMAGE+1}.`); 
-}
+  $(".page-number").html(`0${CURRENT_IMAGE + 1}.`);
+};
 
 var CURRENT_IMAGE: number = 0;
 var TRANSITION_TIME_MS: number = 1000;
-var DELAY_MS: number = 2500;
+var DELAY_MS: number = 5000;
 
 setTimeout(() => runCarousel("#img-box-1", "-Y"), 0);
-setTimeout(() => runCarousel("#img-box-2", "-X"), (TRANSITION_TIME_MS + 150));
-setTimeout(() => runCarousel("#img-box-3", "+Y"), (TRANSITION_TIME_MS + 150) * 2);
+setTimeout(() => runCarousel("#gallery-img-number", "-Y"), 0);
+setTimeout(() => runCarousel("#img-box-2", "-X"), TRANSITION_TIME_MS + 150);
+setTimeout(
+  () => runCarousel("#img-box-3", "+Y"),
+  (TRANSITION_TIME_MS + 150) * 2
+);
