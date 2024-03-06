@@ -17,10 +17,13 @@
 .product-main-hero {
   overflow: visible;
 
-  background: url("../public/images/Phone.png");
-  background-position: 50% 50%;
-  background-size: clamp(560px, 70vw, 950px);
-  background-repeat: no-repeat;
+  background: no-repeat center/clamp(34.375rem, 70vw, 59.375rem)
+    url("../public/images/Phone.png");
+
+  height: max(100vh, 650px);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: repeat(3, 1fr);
 
   &::after {
     /* content: ""; */
@@ -39,13 +42,6 @@
     width: 100%;
     z-index: -1;
   }
-
-  height: max(85svh, 650px);
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: repeat(3, 1fr);
-
-  margin-bottom: 5rem;
 }
 
 .product-hero {
@@ -80,6 +76,9 @@
   grid-row: 3 / 4;
 
   font-size: clamp(1.6rem, 2vw, 1.855rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 
   & p {
     padding-block: 0.6em;
