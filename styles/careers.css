@@ -308,8 +308,13 @@
   display: grid;
   grid-template-columns: 0.5fr 1.5fr;
 
+  & > div {
+    overflow: hidden;
+  }
+
   & h1 {
     font-size: clamp(1.75rem, 3vw, 2.5rem);
+    white-space: nowrap;
   }
 }
 
@@ -320,6 +325,7 @@
   justify-content: center;
   padding-inline: 4vw;
   align-items: center;
+  overflow: auto;
 
   & a {
     cursor: pointer;
@@ -328,7 +334,8 @@
 
 .career__info p {
   font-size: calc(0.15vw + 1rem);
-  line-height: 1.2;
+  line-height: 1.25;
+  letter-spacing: 0.05em;
 }
 
 .career__title {
@@ -377,7 +384,7 @@
   }
 }
 
-@media screen and (max-width: 62.5rem) {
+@media screen and (max-width: 85rem) {
   .career__title {
     display: none;
   }
