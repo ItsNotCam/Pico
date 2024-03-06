@@ -35,6 +35,7 @@ const runCarousel = (selector: string, direction: string): void => {
 
     const timeoutDelay: number =
       curIdx === 0 ? TRANSITION_TIME_MS : DELAY_MS + TRANSITION_TIME_MS;
+
     setTimeout(nextImage, timeoutDelay);
   };
 
@@ -42,16 +43,12 @@ const runCarousel = (selector: string, direction: string): void => {
   nextImage();
 };
 
-const updateImageCollectionNumber = () => {
-  $(".page-number").html(`0${CURRENT_IMAGE + 1}.`);
-};
-
 var CURRENT_IMAGE: number = 0;
 var TRANSITION_TIME_MS: number = 1000;
 var DELAY_MS: number = 5000;
 
-setTimeout(() => runCarousel("#img-box-1", "-Y"), 0);
 setTimeout(() => runCarousel("#gallery-img-number", "-Y"), 0);
+setTimeout(() => runCarousel("#img-box-1", "-Y"), 0);
 setTimeout(() => runCarousel("#img-box-2", "-X"), TRANSITION_TIME_MS + 150);
 setTimeout(
   () => runCarousel("#img-box-3", "+Y"),

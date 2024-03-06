@@ -20,7 +20,7 @@
   background: no-repeat center/clamp(34.375rem, 70vw, 59.375rem)
     url("../public/images/Phone.png");
 
-  height: max(100vh, 650px);
+  height: max(100vh, 40.625rem);
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   grid-template-rows: repeat(3, 1fr);
@@ -35,7 +35,7 @@
     background: url("../public/images/Phone.png");
     /* background-position: 50% 50%; */
     background-position: 50% 50%;
-    background-size: clamp(600px, 70vw, 900px);
+    background-size: clamp(37.5rem, 70vw, 56.25rem);
     background-repeat: no-repeat;
 
     height: 100%;
@@ -63,7 +63,7 @@
 
   & h1 {
     margin-bottom: -0.5em;
-    font-size: min(170px, max(6.5rem, 0.9em));
+    font-size: min(10.625rem, max(6.5rem, 0.9em));
   }
 
   & h2 {
@@ -148,13 +148,13 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 64rem) {
   .product-page-title {
     display: none;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 37.5rem) {
   .product__title h1 {
     font-size: 1.75em;
   }

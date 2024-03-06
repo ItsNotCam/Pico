@@ -120,16 +120,16 @@
         top: 50%;
         transform: translateX(-2px) translateY(-50%);
         height: 1.25rem;
-        width: 3px;
+        width: 0.1875rem;
         background-color: var(--color-600);
       }
 
       &::before {
-        left: calc(50% - 5px);
+        left: calc(50% - 0.3125rem);
       }
 
       &::after {
-        left: calc(50% + 5px);
+        left: calc(50% + 0.3125rem);
       }
     }
 
@@ -236,8 +236,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  grid-template-columns: repeat(15, min(5.5vw, 150px));
-  grid-template-rows: repeat(15, min(5vh, 150px));
+  grid-template-columns: repeat(15, min(5.5vw, 9.375rem));
+  grid-template-rows: repeat(15, min(5vh, 9.375rem));
   grid-gap: 0.8rem;
   max-height: 100%;
 
@@ -372,7 +372,7 @@
     backdrop-filter: blur(5px);
 
     transition: width 0.35s ease-in-out;
-    font-size: max(4.5vw, 30px);
+    font-size: max(4.5vw, 1.875rem);
     /* box-shadow: 0 0 10px rgb(14, 14, 14); */
 
     & h1 {
@@ -395,17 +395,17 @@
       justify-content: center;
       gap: 1.5vw;
       height: 100%;
-      width: clamp(175px, 35%, 225px);
+      width: clamp(10.9375rem, 35%, 14.0625rem);
       margin: 0 auto;
     }
 
     & li {
-      font-size: clamp(24px, 1.75vw, 30px);
+      font-size: clamp(1.5rem, 1.75vw, 1.875rem);
       cursor: pointer;
       position: relative;
       /* width: auto; */
 
-      width: clamp(200, 100%, 250px);
+      width: clamp(200, 100%, 15.625rem);
 
       padding: 0.5em;
       padding-inline: 0.5em;
@@ -432,11 +432,11 @@
   }
 
   & .foldout[aria-expanded="true"] {
-    width: clamp(350px, 25%, 500px);
+    width: clamp(21.875rem, 25%, 31.25rem);
   }
 }
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 84.375rem) {
   .gallery-nav .foldout h1 {
     display: none;
   }
@@ -462,7 +462,7 @@
   }
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 81.25rem) {
   .page-number h1 {
     display: none !important;
   }
@@ -492,7 +492,7 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 64rem) {
   .centered {
     height: 90vh;
     align-items: center;
@@ -547,7 +547,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 37.5rem) {
   .img-list {
     margin-top: 2rem;
     position: relative;
