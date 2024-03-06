@@ -616,10 +616,10 @@
 
     & ul {
       gap: 4rem;
+    }
 
-      & li svg {
-        height: 2.5rem;
-      }
+    & ul li svg {
+      height: 2.5rem;
     }
   }
 

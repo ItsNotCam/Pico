@@ -13,6 +13,14 @@
     flex-direction: row;
     gap: 1.5rem;
 
+    & li {
+      transition: opacity 0.2s, scale 0.2s;
+      &:hover {
+        opacity: 1;
+        scale: 1.1;
+      }
+    }
+
     & li svg {
       fill: var(--color-500);
       height: 2.25rem;

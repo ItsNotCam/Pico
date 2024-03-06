@@ -46,7 +46,7 @@ const foldoutSelectorMaps: FoldoutSelector[] = [
     foldedInDelay: 400,
   },
   {
-    selector: "careers",
+    selector: "career",
     foldedOutDelay: 150,
     foldedInDelay: 400,
   },
