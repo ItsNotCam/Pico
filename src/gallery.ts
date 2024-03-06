@@ -26,7 +26,7 @@ const runCarousel = (selector: string, direction: string): void => {
     $images.each(function () {
       const transitionDuration: number = curIdx === 0 ? 0 : TRANSITION_TIME_MS;
       const transformOffset: number = curIdx * 100;
-      this.style.transition = `transform ${transitionDuration}ms ease-in-out`;
+      this.style.transition = `transform ${transitionDuration}ms cubic-bezier(.41,.07,.34,1)`;
       this.style.transform = `translate${axis}(${imgTranslateDir}${transformOffset}%)`;
     });
 

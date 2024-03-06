@@ -237,7 +237,7 @@
   transform: translate(-50%, -50%);
 
   grid-template-columns: repeat(15, min(5.5vw, 9.375rem));
-  grid-template-rows: repeat(15, min(5vh, 9.375rem));
+  grid-template-rows: repeat(14, min(5vh, 9.375rem));
   grid-gap: 0.8rem;
   max-height: 100%;
 
@@ -279,6 +279,7 @@
   box-shadow: 3px 5px 5px 0px rgb(128, 128, 128);
   border-radius: 0.625rem;
   position: relative;
+  transition: scale 200ms, box-shadow 200ms;
 
   & img {
     width: 100%;
@@ -287,9 +288,9 @@
     position: absolute;
   }
 
-  transition: scale 200ms;
   &:hover {
     scale: 102%;
+    box-shadow: 6px 10px 10px 0px rgb(128, 128, 128);
   }
 }
 
@@ -484,7 +485,7 @@
   }
 
   #img-box-3 {
-    grid-column: 8 / 15 !important;
+    grid-column: 8 / 16 !important;
 
     & div {
       width: 100% !important;
@@ -619,6 +620,26 @@
       & li svg {
         height: 2.5rem;
       }
+    }
+  }
+
+  .gallery-nav .foldout[aria-expanded="true"] {
+    width: 100%;
+  }
+
+  .gallery-nav .foldout ul {
+    padding: 2rem !important;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw !important;
+    width: max-content;
+
+    & li {
+      height: 15vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6.5vw !important;
     }
   }
 }

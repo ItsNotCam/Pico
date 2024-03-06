@@ -17,10 +17,11 @@
 .product-main-hero {
   overflow: visible;
 
-  background: no-repeat center/clamp(34.375rem, 70vw, 59.375rem)
-    url("../public/images/Phone.png");
+  background: no-repeat center / calc(55vw + 1rem)
+    /*clamp(34.375rem, 70vw, 59.375rem)*/ url("../public/images/Phone.png");
 
-  height: max(100vh, 40.625rem);
+  /* height: max(100vh, 40.625rem); */
+  height: 100svh;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   grid-template-rows: repeat(3, 1fr);
@@ -59,15 +60,15 @@
 
   justify-self: center;
   align-self: center;
-  font-size: 10vw;
+  font-size: clamp(6.5rem, 12vw + 1rem, 9rem);
 
   & h1 {
     margin-bottom: -0.5em;
-    font-size: min(10.625rem, max(6.5rem, 0.9em));
+    font-size: 1em; /*min(10.625rem, max(6.5rem, 0.9em));*/
   }
 
   & h2 {
-    font-size: max(2.5rem, 0.3em);
+    font-size: 0.35em;
   }
 }
 
@@ -155,10 +156,6 @@
 }
 
 @media screen and (max-width: 37.5rem) {
-  .product__title h1 {
-    font-size: 1.75em;
-  }
-
   .product__buy {
     justify-content: center;
   }

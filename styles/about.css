@@ -115,7 +115,7 @@
       justify-content: center;
       gap: 1.5vw;
       height: 100%;
-      width: min(35%, 1.375rem);
+      width: min(35%, 13.75rem);
       margin: 0 auto;
     }
 
@@ -156,7 +156,7 @@
 
 .about-main {
   display: grid;
-  grid-template-columns: min(35vw, 34.375rem) 1fr;
+  grid-template-columns: min(30vw, 34.375rem) 1fr;
   grid-template-rows: 1fr;
   height: 100vh;
 }
