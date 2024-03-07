@@ -298,12 +298,12 @@
   }
 }
 
-.career-body__career {
+.career-body__positions {
   display: grid;
   grid-template-columns: 0.5fr 1fr;
 }
 
-.career-body__career {
+.career-body__positions {
   height: 30%;
   display: grid;
   grid-template-columns: 0.5fr 1.5fr;
@@ -456,7 +456,7 @@
     }
   }
 
-  .career-body__career {
+  .career-body__positions {
     display: flex;
     position: relative;
 
