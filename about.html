@@ -1,174 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="public/main.css" />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="public/main.css" />
-
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2
 			?family=League+Spartan:wght@100..900
 			&family=MuseoModerno:ital,wght@0,100..900;1,100..900
-			&display=swap" rel="stylesheet" />
+			&display=swap"
+      rel="stylesheet"
+    />
 
-	<script defer src="public/index.js"></script>
-	<title>Pico</title>
-</head>
+    <script defer src="public/index.js"></script>
+    <title>Pico</title>
+  </head>
 
-<body>
-	<header>
-		<div class="page-in"></div>
-		<div class="circles-container">
-			<div class="circle-1"></div>
-			<div class="circle-2"></div>
-		</div>
-	</header>
-	<main>
-		<div class="about-main">
-			<div class="about-hero">
-				<h1 class="museo"><span>::</span>about</h1>
-				<div class="about-nav" id="about-nav" aria-expanded="false">
-					<div class="ham" id="about-ham" aria-expanded="false">
-						<!-- https://codepen.io/shephero/pen/LYVrdjX -->
-						<svg class="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="#eee" stroke-width=".6"
-							fill="rgba(0,0,0,0)" stroke-linecap="round" style="cursor: pointer">
-							<path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
-								<animate dur="0.2s" attributeName="d"
-									values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze"
-									begin="start.begin" />
-								<animate dur="0.2s" attributeName="d"
-									values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" fill="freeze"
-									begin="reverse.begin" />
-							</path>
-							<rect width="10" height="10" stroke="none" id="hr1">
-								<animate dur="2s" id="reverse" attributeName="width" begin="click" />
-							</rect>
-							<rect width="10" height="10" stroke="none" id="hr2">
-								<animate dur="0.001s" id="start" attributeName="width" values="10;0" fill="freeze" begin="click" />
-								<animate dur="0.001s" attributeName="width" values="0;10" fill="freeze" begin="reverse.begin" />
-							</rect>
-						</svg>
-					</div>
-					<div class="foldout-screen-darken"></div>
-					<div class="foldout" aria-expanded="false">
-						<h1 class="clr-3"><span class="clr-1">where&nbsp;</span>to?</h1>
-						<ul class="clr-1" id="primary-nav">
-							<li data-selected="false" data-link="index.html">home</li>
-							<li data-selected="false" data-link="gallery.html">gallery</li>
-							<li data-selected="false" data-link="product.html">nano</li>
-							<li data-selected="false" data-link="purchase.html">
-								purchase
-							</li>
-							<li data-selected="true" data-ignore-link="true">about</li>
-							<li data-selected="false" data-link="careers.html">careers</li>
-							<li data-selected="false" data-link="contact.html">contact</li>
-							<li data-selected="false" data-link="sitemap.html">site map</li>
-						</ul>
-						<div class="about-nav-socials">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-								<path
-									d="M12,2C6.477,2,2,6.477,2,12c0,5.013,3.693,9.153,8.505,9.876V14.65H8.031v-2.629h2.474v-1.749 c0-2.896,1.411-4.167,3.818-4.167c1.153,0,1.762,0.085,2.051,0.124v2.294h-1.642c-1.022,0-1.379,0.969-1.379,2.061v1.437h2.995 l-0.406,2.629h-2.588v7.247C18.235,21.236,22,17.062,22,12C22,6.477,17.523,2,12,2z" />
-							</svg>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-								<path
-									d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z" />
-							</svg>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-								<path
-									d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z" />
-							</svg>
-						</div>
-					</div>
-				</div>
-				<div class="about-shadow"></div>
-			</div>
-			<div class="about-body">
-				<div class="about-body__info">
-					<p class="spartan fw-6">
-						This website was made as college project. It is a loose parody of
-						Apple’s iPhone 15 ad, and showcases the “pico nano” phone: a
-						fictional smartphone that is designed to disappoint.
-					</p>
-					<div>
-						<div class="about-body__img">
-							<img src="../public/images/rock.jpeg" alt="woman being harmlessly crushed by a rock" />
-						</div>
-						<div class="about-body__blurb">
-							<div>
-								<h1 class="museo">pico.</h1>
-								<p class="spartan">
-									At pico, we really have no idea what we’re doing. But we do
-									what we can to stay in business.
-								</p>
-								<quote class="museo fw-6">we’re all tired. send help.</quote>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="about-body__credits">
-					<div class="credits__title">
-						<h1 class="museo fw-4">credits</h1>
-					</div>
-					<div class="credits__info">
-						<div class="align-baseline">
-							<div class="credits__typography">
-								<h1 class="spartan">typography</h1>
-								<ul>
-									<li class="museo">
-										<p>
-											<a target="_blank" href="https://fonts.google.com/specimen/MuseoModerno">Museo Moderno</a><br />
-											<span class="text-sm">designed by:
-												<a target="_blank" href="https://fonts.google.com/?query=Omnibus-Type">Omnibus-Type</a>
-											</span>
-										</p>
-									</li>
-									<li class="spartan">
-										<p>
-											<a target="_blank" href="https://fonts.google.com/specimen/League+Spartan">League
-												Spartan</a><br />
-											<span class="text-sm">
-												designed by:
-												<a target="_blank" href="https://fonts.google.com/?query=Matt%20Bailey">Matt Bailey</a>
-												and
-												<a target="_blank" href="https://fonts.google.com/?query=Tyler%20Finck">Tyler Finck</a>
-											</span>
-										</p>
-									</li>
-								</ul>
-							</div>
-							<div class="credits__inspo">
-								<h1 class="spartan">inspiration</h1>
-								<ul>
-									<li class="spartan">
-										<p>
-											<span>Apple's beautiful</span>
-											<a target="_blank" href="https://www.apple.com/shop/buy-iphone">iPhone ad</a>
-										</p>
-									</li>
-									<li class="spartan">
-										<p>
-											<a target="_blank" href="https://boomexagency.com">Boomex's</a>
-											<span>award winning site</span>
-										</p>
-									</li>
-									<li class="spartan">
-										<p>
-											<a target="_blank" href="https://boomexagency.com">Tanay Vora's</a>
-											<span>awesome</span>
-											<a target="_blank"
-												href="https://www.behance.net/gallery/89194399/Industrial-Design-Portfolio-2020">portfolio</a>
-										</p>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
-</body>
-
+  <body>
+    <header>
+      <div class="page-in"></div>
+      <div class="circles-container">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+      </div>
+    </header>
+    <main>
+      <div class="about-main">
+        <div class="about-body">
+          <div class="about-body__info">
+            <p class="spartan fw-6">
+              This website was made as college project. It is a loose parody of
+              Apple’s iPhone 15 ad, and showcases the “pico nano” phone: a
+              fictional smartphone that is designed to disappoint.
+            </p>
+            <div>
+              <div class="about-body__img">
+                <img
+                  src="../public/images/rock.jpeg"
+                  alt="woman being harmlessly crushed by a rock"
+                />
+              </div>
+              <div class="about-body__blurb">
+                <div>
+                  <h1 class="museo">pico.</h1>
+                  <p class="spartan">
+                    At pico, we really have no idea what we’re doing. But we do
+                    what we can to stay in business.
+                  </p>
+                  <quote class="museo fw-6">we’re all tired. send help.</quote>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-body__credits">
+            <div class="credits__title">
+              <h1 class="museo fw-4">credits</h1>
+            </div>
+            <div class="credits__info">
+              <div class="align-baseline">
+                <div class="credits__typography">
+                  <h1 class="spartan">typography</h1>
+                  <ul>
+                    <li class="museo">
+                      <p>
+                        <a
+                          target="_blank"
+                          href="https://fonts.google.com/specimen/MuseoModerno"
+                          >Museo Moderno</a
+                        ><br />
+                        <span class="text-sm"
+                          >designed by:
+                          <a
+                            target="_blank"
+                            href="https://fonts.google.com/?query=Omnibus-Type"
+                            >Omnibus-Type</a
+                          >
+                        </span>
+                      </p>
+                    </li>
+                    <li class="spartan">
+                      <p>
+                        <a
+                          target="_blank"
+                          href="https://fonts.google.com/specimen/League+Spartan"
+                          >League Spartan</a
+                        ><br />
+                        <span class="text-sm">
+                          designed by:
+                          <a
+                            target="_blank"
+                            href="https://fonts.google.com/?query=Matt%20Bailey"
+                            >Matt Bailey</a
+                          >
+                          and
+                          <a
+                            target="_blank"
+                            href="https://fonts.google.com/?query=Tyler%20Finck"
+                            >Tyler Finck</a
+                          >
+                        </span>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="credits__inspo">
+                  <h1 class="spartan">inspiration</h1>
+                  <ul>
+                    <li class="spartan">
+                      <p>
+                        <span>Apple's beautiful</span>
+                        <a
+                          target="_blank"
+                          href="https://www.apple.com/shop/buy-iphone"
+                          >iPhone ad</a
+                        >
+                      </p>
+                    </li>
+                    <li class="spartan">
+                      <p>
+                        <a target="_blank" href="https://boomexagency.com"
+                          >Boomex's</a
+                        >
+                        <span>award winning site</span>
+                      </p>
+                    </li>
+                    <li class="spartan">
+                      <p>
+                        <a target="_blank" href="https://boomexagency.com"
+                          >Tanay Vora's</a
+                        >
+                        <span>awesome</span>
+                        <a
+                          target="_blank"
+                          href="https://www.behance.net/gallery/89194399/Industrial-Design-Portfolio-2020"
+                          >portfolio</a
+                        >
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-hero">
+          <h1 class="museo"><span>::</span>about</h1>
+          <div class="about-nav" id="about-nav" aria-expanded="false">
+            <div class="ham" id="about-ham" aria-expanded="false">
+              <!-- https://codepen.io/shephero/pen/LYVrdjX -->
+              <svg
+                class="hb"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 10 10"
+                stroke="#eee"
+                stroke-width=".6"
+                fill="rgba(0,0,0,0)"
+                stroke-linecap="round"
+                style="cursor: pointer"
+              >
+                <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
+                  <animate
+                    dur="0.2s"
+                    attributeName="d"
+                    values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7"
+                    fill="freeze"
+                    begin="start.begin"
+                  />
+                  <animate
+                    dur="0.2s"
+                    attributeName="d"
+                    values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7"
+                    fill="freeze"
+                    begin="reverse.begin"
+                  />
+                </path>
+                <rect width="10" height="10" stroke="none" id="hr1">
+                  <animate
+                    dur="2s"
+                    id="reverse"
+                    attributeName="width"
+                    begin="click"
+                  />
+                </rect>
+                <rect width="10" height="10" stroke="none" id="hr2">
+                  <animate
+                    dur="0.001s"
+                    id="start"
+                    attributeName="width"
+                    values="10;0"
+                    fill="freeze"
+                    begin="click"
+                  />
+                  <animate
+                    dur="0.001s"
+                    attributeName="width"
+                    values="0;10"
+                    fill="freeze"
+                    begin="reverse.begin"
+                  />
+                </rect>
+              </svg>
+            </div>
+            <div class="foldout-screen-darken"></div>
+            <div class="foldout" aria-expanded="false">
+              <h1 class="clr-3"><span class="clr-1">where&nbsp;</span>to?</h1>
+              <ul class="clr-1" id="primary-nav">
+                <li data-selected="false" data-link="index.html">home</li>
+                <li data-selected="false" data-link="gallery.html">gallery</li>
+                <li data-selected="false" data-link="product.html">nano</li>
+                <li data-selected="false" data-link="purchase.html">
+                  purchase
+                </li>
+                <li data-selected="true" data-ignore-link="true">about</li>
+                <li data-selected="false" data-link="careers.html">careers</li>
+                <li data-selected="false" data-link="contact.html">contact</li>
+                <li data-selected="false" data-link="sitemap.html">site map</li>
+              </ul>
+              <div class="about-nav-socials">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M12,2C6.477,2,2,6.477,2,12c0,5.013,3.693,9.153,8.505,9.876V14.65H8.031v-2.629h2.474v-1.749 c0-2.896,1.411-4.167,3.818-4.167c1.153,0,1.762,0.085,2.051,0.124v2.294h-1.642c-1.022,0-1.379,0.969-1.379,2.061v1.437h2.995 l-0.406,2.629h-2.588v7.247C18.235,21.236,22,17.062,22,12C22,6.477,17.523,2,12,2z"
+                  />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                  <path
+                    d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z"
+                  />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                  <path
+                    d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="about-shadow"></div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
