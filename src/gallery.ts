@@ -41,6 +41,7 @@ var runCarousel = (selector: string, direction: string): void => {
 
     // Update the current index for the next image and set a timeout for the next transition.
     curIdx = (curIdx + 1) % $images.length;
+    CURRENT_IMAGE = curIdx;
 
     const timeoutDelay: number =
       curIdx === 0 ? XITION_TIME_MS : DELAY_MS + XITION_TIME_MS;

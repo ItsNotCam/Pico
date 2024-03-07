@@ -13,7 +13,7 @@ $("#nav-wrapper").load("components/nav.html #nav-wrapper", function () {
 });
 
 function setPageTitle(): void {
-  let page = window.location.pathname;
+  let page: string = window.location.pathname;
   page = page
     .substring(page.lastIndexOf("/"))
     .replace("/", "")
@@ -49,20 +49,20 @@ function registerNavDropdowns(): void {
     "site_map.html",
   ];
   $("#primary-nav li").each(function () {
-    let pageName = $(this).data("link");
-    let currentPageLocation = window.location.pathname;
+    let pageName: string = $(this).data("link");
+    let currentPageLocation: string = window.location.pathname;
     currentPageLocation = currentPageLocation
       .substring(currentPageLocation.lastIndexOf("/"))
       .replace("/", "");
 
-    const isCurrentPage = pageName === currentPageLocation;
-    const isHome =
+    const isCurrentPage: boolean = pageName === currentPageLocation;
+    const isHome: boolean =
       (currentPageLocation === undefined ||
         currentPageLocation === "" ||
         currentPageLocation === "/" ||
         currentPageLocation === "  ") &&
       pageName === "index.html";
-    const isInInfo =
+    const isInInfo: boolean =
       this.id === "info-dropdown" && infoSites.includes(currentPageLocation);
 
     const isSelectedPage = isCurrentPage || isHome || isInInfo;
@@ -79,8 +79,8 @@ function registerNavDropdowns(): void {
 function registerNavLinks() {
   $("#primary-nav li").on("click", function () {
     if (!$(this).data("ignore-link")) {
-      const link = $(this).data("link");
-      const location = window.location.pathname.replace("/", "");
+      const link: string = $(this).data("link");
+      const location: string = window.location.pathname.replace("/", "");
       if (link !== location) {
         redirect($(this));
       }
@@ -89,14 +89,14 @@ function registerNavLinks() {
 }
 
 function registerDropdownObserver(): void {
-  let dropdown = $("#info-dropdown");
-  let observer = new MutationObserver((mutations) => {
+  let dropdown: JQuery = $("#info-dropdown");
+  let observer: MutationObserver = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       if (
         mutation.type === "attributes" &&
         mutation.attributeName === "aria-expanded"
       ) {
-        const expanded =
+        const expanded: boolean =
           (mutation.target as unknown as { ariaExpanded: string })
             .ariaExpanded === "true";
         $("#info-dropdown-items").css({

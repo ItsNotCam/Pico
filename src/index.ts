@@ -60,7 +60,7 @@ export function registerNavFoldout({
   foldedInDelay,
 }: FoldoutSelector): void {
   $(`#${selector}-ham`).on("click", function () {
-    const $foldout = $(`#${selector}-nav .foldout`);
+    const $foldout: JQuery = $(`#${selector}-nav .foldout`);
     const isFoldedOut: boolean = $foldout.attr("aria-expanded") === "true";
 
     // close menu when clicking off of it
