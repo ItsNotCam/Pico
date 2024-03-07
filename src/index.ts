@@ -7,14 +7,14 @@ import "../styles/product.css";
 import "../styles/about.css";
 import "../styles/careers.css";
 
-import "./components/nav.ts";
-import "./components/footer.ts";
+import "./components/nav";
+import "./components/footer";
 
-import "./util.ts";
-import "./gallery.ts";
-import "./home.ts";
-import "./about.ts";
-import "./careers.ts";
+import "./util";
+import "./gallery";
+import "./home";
+import "./about";
+import "./careers";
 
 import $ from "jquery";
 

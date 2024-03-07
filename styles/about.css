@@ -51,6 +51,19 @@
   width: 100%;
   height: 100%;
 
+  &[aria-expanded="false"] {
+    .foldout-screen-darken {
+      pointer-events: none;
+    }
+  }
+
+  &[aria-expanded="true"] {
+    .foldout-screen-darken {
+      opacity: 0.5;
+      pointer-events: all;
+    }
+  }
+
   & .ham {
     position: absolute;
     z-index: 2;
@@ -67,19 +80,6 @@
     background-color: rgba(0, 0, 0);
     opacity: 0;
     transition: opacity 0.25s linear;
-  }
-
-  &[aria-expanded="false"] {
-    .foldout-screen-darken {
-      pointer-events: none;
-    }
-  }
-
-  &[aria-expanded="true"] {
-    .foldout-screen-darken {
-      opacity: 0.5;
-      pointer-events: all;
-    }
   }
 
   & .foldout {
