@@ -6,6 +6,7 @@ import "../styles/nav.css";
 import "../styles/product.css";
 import "../styles/about.css";
 import "../styles/careers.css";
+import "../styles/purchase.css";
 
 import "./components/nav";
 import "./components/footer";

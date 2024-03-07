@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="public/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2
+			?family=League+Spartan:wght@100..900
+			&family=MuseoModerno:ital,wght@0,100..900;1,100..900
+			&display=swap"
+      rel="stylesheet"
+    />
+
+    <script defer src="public/index.js"></script>
+    <title>Pico</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="page-in"></div>
+      <div class="circles-container">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+        <div class="circle-3"></div>
+      </div>
+      <div class="gallery-nav" id="gallery-nav" aria-expanded="false">
+        <div class="ham" id="gallery-ham" aria-expanded="false">
+          <!-- https://codepen.io/shephero/pen/LYVrdjX -->
+          <svg
+            class="hb"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 10 10"
+            stroke="#eee"
+            stroke-width=".6"
+            fill="rgba(0,0,0,0)"
+            stroke-linecap="round"
+            style="cursor: pointer"
+          >
+            <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
+              <animate
+                dur="0.2s"
+                attributeName="d"
+                values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7"
+                fill="freeze"
+                begin="start.begin"
+              />
+              <animate
+                dur="0.2s"
+                attributeName="d"
+                values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7"
+                fill="freeze"
+                begin="reverse.begin"
+              />
+            </path>
+            <rect width="10" height="10" stroke="none">
+              <animate
+                dur="2s"
+                id="reverse"
+                attributeName="width"
+                begin="click"
+              />
+            </rect>
+            <rect width="10" height="10" stroke="none">
+              <animate
+                dur="0.001s"
+                id="start"
+                attributeName="width"
+                values="10;0"
+                fill="freeze"
+                begin="click"
+              />
+              <animate
+                dur="0.001s"
+                attributeName="width"
+                values="0;10"
+                fill="freeze"
+                begin="reverse.begin"
+              />
+            </rect>
+          </svg>
+        </div>
+        <div class="foldout-screen-darken"></div>
+        <div class="foldout" aria-expanded="false">
+          <h1 class="clr-3"><span class="clr-1">where&nbsp;</span>to?</h1>
+          <ul class="clr-1" id="primary-nav">
+            <li data-selected="false" data-link="index.html">home</li>
+            <li data-selected="false" data-link="gallery.html">gallery</li>
+            <li data-selected="false" data-link="product.html">nano</li>
+            <li data-selected="true" data-ignore-link="true">purchase</li>
+            <li data-selected="false" data-link="about.html">about</li>
+            <li data-selected="false" data-link="careers.html">careers</li>
+            <li data-selected="false" data-link="contact.html">contact</li>
+            <li data-selected="false" data-link="sitemap.html">site map</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="purchase-title">
+        <h1 class="museo">buy nano.</h1>
+        <p>
+          <span class="lower fw-5 clr-4">from $</span
+          ><span class="upper fw-5 clr-4">169.99</span>
+          <span class="lower fw-5 clr-4">or $</span
+          ><span class="upper fw-5 clr-4">4.20</span
+          ><span class="lower fw-5 clr-4">/mo. for a while</span>
+        </p>
+      </div>
+      <div class="purchase-body">
+        <div class="purchase-body__images">
+          <div class="image-container">
+            <img src="public/images/product_image_1.png" />
+          </div>
+          <div class="purchase-image-selectors">
+            <div id="img-select-1" data-selected="true"></div>
+            <div id="img-select-2"></div>
+            <div id="img-select-3"></div>
+          </div>
+        </div>
+        <div class="purchase-body__options">
+          <div class="purchase-body-category">
+            <p class="clr-4">
+              <span class="fw-6 clr-6">Model.</span> How much screen do you
+              want?
+            </p>
+            <div class="pb-option-list">
+              <div class="pb-option" data-selected="false">
+                <div class="pb-option-header">
+                  <div class="pb-option-title">
+                    <h1 class="museo">nano</h1>
+                    <p class="museo fw-6">(one)</p>
+                  </div>
+                  <div class="pb-option-spec">
+                    <p>4.2-inch display</p>
+                  </div>
+                </div>
+                <div class="pb-option-footer">
+                  <p>from $169.99</p>
+                  <p>or $4.20/mo.</p>
+                  <p>for a while</p>
+                </div>
+              </div>
+              <div class="pb-option" data-selected="true">
+                <div class="pb-option-header">
+                  <div class="pb-option-title">
+                    <h1 class="museo">nano</h1>
+                    <p class="museo fw-6">(one point five)</p>
+                  </div>
+                  <div class="pb-option-spec">
+                    <p>6.9-inch display</p>
+                  </div>
+                </div>
+                <div class="pb-option-footer">
+                  <p>from $669.99</p>
+                  <p>or $42.00/mo.</p>
+                  <p>for a while</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="purchase-body-category">
+            <p class="clr-4">
+              <span class="fw-6 clr-6">Color.</span> You've only got two
+              choices.
+            </p>
+            <div class="pb-color-options">
+              <div id="pb-color-option-light" data-selected="true"></div>
+              <div id="pb-color-option-dark" data-selected="false"></div>
+            </div>
+          </div>
+          <div class="purchase-body-category">
+            <p class="clr-4">
+              <span class="fw-6 clr-6">Storage.</span> How much space do you
+              need?
+            </p>
+
+            <div class="pb-option" data-selected="false">
+              <div class="pb-option-header">
+                <div class="pb-option-title">
+                  <h1 class="museo">useless</h1>
+                  <p class="museo fw-6">(5mb)</p>
+                </div>
+                <div class="pb-option-spec">
+                  <p>you're stuck in 1998</p>
+                </div>
+              </div>
+              <div class="pb-option-footer">
+                <p>from $169.99</p>
+                <p>or $4.20/mo.</p>
+                <p>for a while</p>
+              </div>
+            </div>
+            <div class="pb-option" data-selected="true">
+              <div class="pb-option-header">
+                <div class="pb-option-title">
+                  <h1 class="museo">mid</h1>
+                  <p class="museo fw-6">(10gb)</p>
+                </div>
+                <div class="pb-option-spec">
+                  <p>4.2-inch display</p>
+                </div>
+              </div>
+              <div class="pb-option-footer">
+                <p>from $420.99</p>
+                <p>or $6.90/mo.</p>
+                <p>for a while</p>
+              </div>
+            </div>
+            <div class="pb-option" data-selected="false">
+              <div class="pb-option-header">
+                <div class="pb-option-title">
+                  <h1 class="museo">a lot</h1>
+                  <p class="museo fw-6">(10tb)</p>
+                </div>
+                <div class="pb-option-spec">
+                  <p>way too much</p>
+                </div>
+              </div>
+              <div class="pb-option-footer">
+                <p>from $669.99</p>
+                <p>or $42.00/mo.</p>
+                <p>for a while</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div>
+        <div class="hashtag museo clr-4"></div>
+        <div class="gallery-footer">
+          <h1 class="fw-5 museo clr-4">pico nano</h1>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
