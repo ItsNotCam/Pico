@@ -110,8 +110,9 @@
 }
 
 .main-container {
-  height: 100svh;
-  width: 100svw;
+  /* height: 100svh;
+  width: 100svw; */
+  height: 90svh;
   display: flex;
   flex-direction: row;
   background-color: var(--color-200);
@@ -295,7 +296,7 @@
 
     & .hero-btn-container {
       flex-direction: column;
-      margin-top: 18rem;
+      margin-top: 25rem;
       width: 100%;
     }
 
