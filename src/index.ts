@@ -59,7 +59,6 @@ export function registerNavFoldout({
   foldedOutDelay,
   foldedInDelay,
 }: FoldoutSelector): void {
-  console.log("registering", selector);
   $(`#${selector}-ham`).on("click", function () {
     const $foldout = $(`#${selector}-nav .foldout`);
     const isFoldedOut: boolean = $foldout.attr("aria-expanded") === "true";
