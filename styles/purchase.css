@@ -111,10 +111,10 @@
   align-self: center;
 
   & > div {
-    height: 1rem;
-    width: 1rem;
+    height: min(1rem, 1.2vw);
+    width: min(1rem, 1.2vw);
     border-radius: 50%;
-    border: 2px solid var(--color-600);
+    border: 1px solid var(--color-600);
     cursor: pointer;
   }
 

@@ -358,7 +358,7 @@
 }
 
 .career__info > div h1 {
-  margin-bottom: calc(1vw + 0.25rem);
+  margin-bottom: calc(1vw);
 }
 
 .career__info > div ul {
@@ -384,7 +384,7 @@
   }
 }
 
-@media screen and (max-width: 85rem) {
+@media screen and (max-width: 85.4375rem) {
   .career__title {
     display: none;
   }
