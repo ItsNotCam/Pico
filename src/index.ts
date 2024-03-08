@@ -16,6 +16,7 @@ import "./gallery";
 import "./home";
 import "./about";
 import "./product";
+import "./purchase";
 import "./careers";
 
 import $ from "jquery";
