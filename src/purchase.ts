@@ -21,37 +21,25 @@ optStorage.each(function () {
   });
 });
 
-enum COLOR {
-  LIGHT,
-  DARK,
-}
-
-var COLOR_STATE: COLOR = COLOR.DARK;
+const clrChoiceChildren: JQuery<HTMLElement> = $("#color-choice").children();
 
 const clrLight: JQuery = $("#pb-color-option-light");
 const clrDark: JQuery = $("#pb-color-option-dark");
-const clrTxt: JQuery = $("#color-choice");
+const clrTxtDark: JQuery<HTMLElement> = clrChoiceChildren.first();
+const clrTxtLight: JQuery<HTMLElement> = clrChoiceChildren.last();
 
 clrLight.on("click", () => {
   $(clrLight).attr("data-selected", "true");
   $(clrDark).attr("data-selected", "false");
 
-  $(clrTxt).html("light.");
-  $(clrTxt).removeClass("clr-1");
-  $(clrTxt).removeClass("clr-6");
-  $(clrTxt).addClass("clr-1");
-
-  COLOR_STATE = COLOR.LIGHT;
+  clrTxtLight.css("opacity", "1");
+  clrTxtDark.css("opacity", "0");
 });
 
 clrDark.on("click", () => {
   $(clrLight).attr("data-selected", "false");
   $(clrDark).attr("data-selected", "true");
 
-  $(clrTxt).html("dark.");
-  $(clrTxt).removeClass("clr-1");
-  $(clrTxt).removeClass("clr-6");
-  $(clrTxt).addClass("clr-6");
-
-  COLOR_STATE = COLOR.DARK;
+  clrTxtDark.css("opacity", "1");
+  clrTxtLight.css("opacity", "0");
 });
