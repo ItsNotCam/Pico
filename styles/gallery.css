@@ -290,8 +290,8 @@
   }
 
   &:hover {
-    scale: 102%;
-    box-shadow: 6px 10px 10px 0px rgb(128, 128, 128);
+    /* scale: 100.5%; */
+    /* box-shadow: 6px 10px 10px 0px rgb(128, 128, 128); */
   }
 }
 

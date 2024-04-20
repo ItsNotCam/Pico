@@ -6,7 +6,7 @@ var DELAY_MS: number = 5000;
 
 $(".img-box img").on("click", function() {
   let attribution = $(this).data("attribution");
-  if(attribution && window) {
+  if(attribution) {
     const link = document.createElement('a');
     link.href = attribution;
     link.target="_blank";
