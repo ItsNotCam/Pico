@@ -110,6 +110,22 @@
   aspect-ratio: 16 / 9 ;
 }
 
+.buy-button {
+  /* background-color: orange; */
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 0;
+  margin: 0;
+
+  & button {
+    padding: 0;
+    margin: 0;
+  }
+}
+
 .product-image {
   /* position: absolute; */
   height: 100%;
