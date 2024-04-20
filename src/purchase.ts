@@ -1,5 +1,17 @@
 import $ from "jquery";
 
+const purchaseImgSelectors = [$("#img-select-1"), $("#img-select-2"), $("#img-select-3")];
+const purchaseImgs = [$("#product-image-1"), $("#product-image-2"), $("#product-image-3")]
+for(let i = 0; i < purchaseImgSelectors.length; i++) {
+  purchaseImgSelectors[i].on("click", () => {
+    for(let j = 0; j < purchaseImgSelectors.length; j++) {
+      let isSelected = j === i ? "true" : "false";
+      purchaseImgSelectors[j].attr("data-selected", isSelected);
+      purchaseImgs[j].attr("data-visible", isSelected);
+    }
+  })
+}
+
 const optModel = $("#pb-opt-list-model > div");
 const optStorage = $("#pb-opt-list-storage > div");
 

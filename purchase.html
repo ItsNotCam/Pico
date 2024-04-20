@@ -113,7 +113,24 @@
         <div class="purchase-body__images">
           <!-- <p class="h4">(no, there is no way to actually buy this.)</p> -->
           <div class="image-container">
-            <img src="public/images/product_image_1.png" />
+            <img
+              class="product-image"
+              id="product-image-1"
+              data-visible="true"
+              src="public/images/product_image_1.png"
+            />
+            <img
+              class="product-image"
+              id="product-image-2"
+              data-visible="false"
+              src="public/images/product_image_2.png"
+            />
+            <img
+              class="product-image"
+              id="product-image-3"
+              data-visible="false"
+              src="public/images/product_image_3.png"
+            />
           </div>
           <div class="purchase-image-selectors">
             <div id="img-select-1" data-selected="true"></div>
@@ -230,6 +247,56 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="purchase-accessories">
+        <h1 class="museo h1">Accessories</h1>
+        <div class="purchase-other__items">
+          <div class="item-card">
+            <h1>Earbuds</h1>
+            <img src="public/images/earbuds.png" alt="earbuds" />
+            <p>
+              Ultra light. Powerful sound.
+              <br />
+              <br />
+              Next-level Active Noise Cancellation
+              <br />
+              <br />
+              Up to 420 hrs of ignoring everyone around you
+            </p>
+            <button class="btn btn-light museo">Sold out</button>
+            <!-- <div class="sideways-line-thing"></div> -->
+          </div>
+          <div class="item-card">
+            <h1>Charger</h1>
+            <!-- <button class="btn btn-light museo">Charger</button> -->
+            <img src="public/images/plug.png" alt="wall socket" />
+            <p>
+              90W super fast charging
+              <br /><br />
+              The most effective charge.
+              <br /><br />
+              USB-C compatible
+            </p>
+            <button class="btn btn-light museo">Sold out</button>
+            <!-- <div class="sideways-line-thing"></div> -->
+          </div>
+          <div class="item-card">
+            <h1>Watch</h1>
+            <!-- <button class="btn btn-light museo">Watch</button> -->
+            <img src="public/images/watch.png" alt="watch" />
+            <p>
+              Ultra light. Super fast.
+              <br />
+              <br />
+              The only compatible watch
+              <br />
+              <br />
+              Up to 100 hrs of battery life
+            </p>
+            <button class="btn btn-light museo">Sold out</button>
+            <!-- <div class="sideways-line-thing"></div> -->
           </div>
         </div>
       </div>
