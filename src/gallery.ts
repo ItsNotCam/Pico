@@ -7,8 +7,12 @@ var DELAY_MS: number = 5000;
 $(".img-box img").on("click", function() {
   let attribution = $(this).data("attribution");
   if(attribution && window) {
-    window.open(attribution, '_blank').focus();
-    // window.location.assign(attribution);
+    const link = document.createElement('a');
+    link.href = attribution;
+    link.target="_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 });
 
