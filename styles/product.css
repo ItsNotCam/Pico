@@ -17,7 +17,7 @@
 .product-main-hero {
   overflow: visible;
 
-  background: no-repeat center / calc(55vw + 1rem)
+  background: no-repeat center / calc(90vh + 1rem)
     /*clamp(34.375rem, 70vw, 59.375rem)*/ url("../public/images/Phone.png");
 
   /* height: max(100vh, 40.625rem); */
