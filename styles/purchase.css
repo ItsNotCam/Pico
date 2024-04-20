@@ -105,13 +105,16 @@
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   position: relative;
+  width: 100%;
+  /* height: 100%; */
+  aspect-ratio: 16 / 9 ;
 }
 
 .product-image {
   /* position: absolute; */
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
 
   &[data-visible="false"] {
     display: none;

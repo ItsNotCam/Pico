@@ -23,3 +23,13 @@ $(".img-selector").on("click", function () {
     });
   });
 });
+
+let disclaimerText = $(".disclaimer__text");
+
+$(".disclaimer__title").on("click", function() {
+  disclaimerText.attr("data-visible", "true");
+})
+
+$("#disclaimer__close").on("click", () => {
+  disclaimerText.attr("data-visible", "false");
+});

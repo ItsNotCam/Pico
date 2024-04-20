@@ -99,6 +99,25 @@
       </div>
     </header>
     <main>
+      <div class="disclaimer">
+        <h1 class="disclaimer__title">disclaimer</h1>
+        <div class="disclaimer__text" data-visible="false">
+          <p class="clr-3">
+            This is a fictitious website and is developed as an education
+            project.<br /><br />
+            Certain materials are included under the fair use exemption of the
+            U.S. Copyright Law and have been prepared according to the
+            multimedia fair use guidelines and are restricted from further use.
+            <br /><br />
+            The images of the "pico nano" phone and its accessories depicted on
+            this site are of a real phone called the "nothing" phone.
+            <br /><br />
+            All other images are taken from Adobe stock.
+            <br /><br />
+            <span id="disclaimer__close">Close</span>
+          </p>
+        </div>
+      </div>
       <div class="purchase-title">
         <h1 class="museo">buy nano.</h1>
         <p>
@@ -118,19 +137,35 @@
               id="product-image-1"
               data-visible="true"
               src="public/images/product_image_1.png"
+              alt="product image 1"
             />
             <img
               class="product-image"
               id="product-image-2"
               data-visible="false"
               src="public/images/product_image_2.png"
+              alt="product image 2"
             />
-            <img
+            <iframe
+              class="product-image"
+              id="product-image-3"
+              width="100%"
+              height="100%"
+              data-visible="false"
+                src="https://www.youtube.com/embed/3fI0b0eYxFQ?si=rC20p83SvoZkTQWH"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+              alt="product video"
+            ></iframe>
+            <!-- <img
               class="product-image"
               id="product-image-3"
               data-visible="false"
               src="public/images/product_image_3.png"
-            />
+            /> -->
           </div>
           <div class="purchase-image-selectors">
             <div id="img-select-1" data-selected="true"></div>

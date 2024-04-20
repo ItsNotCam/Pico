@@ -1,113 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="public/main.css" />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="public/main.css" />
-
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2
 			?family=League+Spartan:wght@100..900
 			&family=MuseoModerno:ital,wght@0,100..900;1,100..900
-			&display=swap" rel="stylesheet" />
+			&display=swap"
+      rel="stylesheet"
+    />
 
-	<script defer src="public/index.js"></script>
-	<title>Pico</title>
-</head>
+    <script defer src="public/index.js"></script>
+    <title>Pico</title>
+  </head>
 
-<body>
-	<header>
-		<div class="page-in"></div>
-		<div class="circles-container">
-			<div class="circle-1"></div>
-			<div class="circle-2"></div>
-			<div class="circle-3"></div>
-		</div>
-		<div class="gallery-nav" id="gallery-nav" aria-expanded="false">
-			<div class="ham" id="gallery-ham" aria-expanded="false">
-				<!-- https://codepen.io/shephero/pen/LYVrdjX -->
-				<svg class="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="#eee" stroke-width=".6"
-					fill="rgba(0,0,0,0)" stroke-linecap="round" style="cursor: pointer">
-					<path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
-						<animate dur="0.2s" attributeName="d"
-							values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze"
-							begin="start.begin" />
-						<animate dur="0.2s" attributeName="d"
-							values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" fill="freeze"
-							begin="reverse.begin" />
-					</path>
-					<rect width="10" height="10" stroke="none">
-						<animate dur="2s" id="reverse" attributeName="width" begin="click" />
-					</rect>
-					<rect width="10" height="10" stroke="none">
-						<animate dur="0.001s" id="start" attributeName="width" values="10;0" fill="freeze" begin="click" />
-						<animate dur="0.001s" attributeName="width" values="0;10" fill="freeze" begin="reverse.begin" />
-					</rect>
-				</svg>
-			</div>
-			<div class="foldout-screen-darken"></div>
-			<div class="foldout" aria-expanded="false">
-				<h1 class="clr-3"><span class="clr-1">where&nbsp;</span>to?</h1>
-				<ul class="clr-1" id="primary-nav">
-					<li data-selected="false" data-link="index.html">home</li>
-					<li data-selected="true" data-ignore-link="true">gallery</li>
-					<li data-selected="false" data-link="product.html">nano</li>
-					<li data-selected="false" data-link="purchase.html">purchase</li>
-					<li data-selected="false" data-link="about.html">about</li>
-					<li data-selected="false" data-link="careers.html">careers</li>
-					<li data-selected="false" data-link="contact.html">contact</li>
-					<li data-selected="false" data-link="sitemap.html">site map</li>
-				</ul>
-			</div>
-		</div>
-	</header>
-	<main>
-		<div class="gallery-grid">
-			<div class="page-number" id="gallery-img-number">
-				<h1 class="h1 museo clr-3 fw-6">01.</h1>
-				<h1 class="h1 museo clr-3 fw-6">02.</h1>
-				<h1 class="h1 museo clr-3 fw-6">03.</h1>
-				<h1 class="h1 museo clr-3 fw-6">01.</h1>
-			</div>
-			<div class="gallery-title">
-				<h1 class="museo h1">shot on nano.</h1>
-				<p>
-					The nano's camera is still experimental. Currently it works 100% of
-					the time, 70% of the time. These images are just stock images from
-					the internet.
-				</p>
-				<quote class="museo fw-6 h4">we're doing our best</quote>
-			</div>
-			<div class="img-box" id="img-box-1">
-				<img src="public/images/img1.jpeg" />
-				<img src="public/images/img3.jpeg" />
-				<img src="public/images/img2.jpeg" />
-				<img src="public/images/img1.jpeg" />
-			</div>
-			<div class="img-box" id="img-box-2">
-				<img src="public/images/img2.jpeg" />
-				<img src="public/images/img1.jpeg" />
-				<img src="public/images/img3.jpeg" />
-				<img src="public/images/img2.jpeg" />
-			</div>
-			<div class="img-box" id="img-box-3">
-				<img src="public/images/img3.jpeg" />
-				<img src="public/images/img2.jpeg" />
-				<img src="public/images/img1.jpeg" />
-				<img src="public/images/img3.jpeg" />
-			</div>
-		</div>
-	</main>
-	<footer>
-		<div>
-			<div class="hashtag museo clr-4"></div>
-			<div class="gallery-footer">
-				<h1 class="fw-5 museo clr-4">pico nano</h1>
-			</div>
-		</div>
-	</footer>
-</body>
-
+  <body>
+    <header>
+      <div class="page-in"></div>
+      <div class="circles-container">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+        <div class="circle-3"></div>
+      </div>
+      <div class="gallery-nav" id="gallery-nav" aria-expanded="false">
+        <div class="ham" id="gallery-ham" aria-expanded="false">
+          <!-- https://codepen.io/shephero/pen/LYVrdjX -->
+          <svg
+            class="hb"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 10 10"
+            stroke="#eee"
+            stroke-width=".6"
+            fill="rgba(0,0,0,0)"
+            stroke-linecap="round"
+            style="cursor: pointer"
+          >
+            <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
+              <animate
+                dur="0.2s"
+                attributeName="d"
+                values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7"
+                fill="freeze"
+                begin="start.begin"
+              />
+              <animate
+                dur="0.2s"
+                attributeName="d"
+                values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7"
+                fill="freeze"
+                begin="reverse.begin"
+              />
+            </path>
+            <rect width="10" height="10" stroke="none">
+              <animate
+                dur="2s"
+                id="reverse"
+                attributeName="width"
+                begin="click"
+              />
+            </rect>
+            <rect width="10" height="10" stroke="none">
+              <animate
+                dur="0.001s"
+                id="start"
+                attributeName="width"
+                values="10;0"
+                fill="freeze"
+                begin="click"
+              />
+              <animate
+                dur="0.001s"
+                attributeName="width"
+                values="0;10"
+                fill="freeze"
+                begin="reverse.begin"
+              />
+            </rect>
+          </svg>
+        </div>
+        <div class="foldout-screen-darken"></div>
+        <div class="foldout" aria-expanded="false">
+          <h1 class="clr-3"><span class="clr-1">where&nbsp;</span>to?</h1>
+          <ul class="clr-1" id="primary-nav">
+            <li data-selected="false" data-link="index.html">home</li>
+            <li data-selected="true" data-ignore-link="true">gallery</li>
+            <li data-selected="false" data-link="product.html">nano</li>
+            <li data-selected="false" data-link="purchase.html">purchase</li>
+            <li data-selected="false" data-link="about.html">about</li>
+            <li data-selected="false" data-link="careers.html">careers</li>
+            <li data-selected="false" data-link="contact.html">contact</li>
+            <li data-selected="false" data-link="sitemap.html">site map</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="disclaimer">
+        <h1 class="disclaimer__title">disclaimer</h1>
+        <div class="disclaimer__text" data-visible="false">
+          <p class="clr-3">
+            This is a fictitious website and is developed as an education
+            project.<br /><br />
+            Certain materials are included under the fair use exemption of the
+            U.S. Copyright Law and have been prepared according to the
+            multimedia fair use guidelines and are restricted from further use.
+            <br /><br />
+            The images of the "pico nano" phone and its accessories depicted on this site are of a
+            real phone called the "nothing" phone.
+            <br /><br />
+            All other images are taken from Adobe stock.
+            <br><br>
+            <span id="disclaimer__close">Close</span>
+          </p>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="page-number" id="gallery-img-number">
+          <h1 class="h1 museo clr-3 fw-6">01.</h1>
+          <h1 class="h1 museo clr-3 fw-6">02.</h1>
+          <h1 class="h1 museo clr-3 fw-6">03.</h1>
+          <h1 class="h1 museo clr-3 fw-6">01.</h1>
+        </div>
+        <div class="gallery-title">
+          <h1 class="museo h1">shot on nano.</h1>
+          <p>
+            The nano's camera is still experimental. Currently it works 100% of
+            the time, 70% of the time. These images are just stock images from
+            the internet.
+          </p>
+          <quote class="museo fw-6 h4">we're doing our best</quote>
+        </div>
+        <div class="img-box" id="img-box-1">
+          <img src="public/images/img1.jpeg" alt="tiger"/>
+          <img src="public/images/img3.jpeg" alt="woman"/>
+          <img src="public/images/img2.jpeg" alt="dock"/>
+          <img src="public/images/img1.jpeg" alt="tiger"/>
+        </div>
+        <div class="img-box" id="img-box-2">
+          <img src="public/images/img2.jpeg" alt="dock"/>
+          <img src="public/images/img1.jpeg" alt="tiger"/>
+          <img src="public/images/img3.jpeg" alt="woman"/>
+          <img src="public/images/img2.jpeg" alt="dock"/>
+        </div>
+        <div class="img-box" id="img-box-3">
+          <img src="public/images/img3.jpeg" alt="woman"/>
+          <img src="public/images/img2.jpeg" alt="dock"/>
+          <img src="public/images/img1.jpeg" alt="tiger"/>
+          <img src="public/images/img3.jpeg" alt="woman"/>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div>
+        <div class="hashtag museo clr-4"></div>
+        <div class="gallery-footer">
+          <h1 class="fw-5 museo clr-4">pico nano</h1>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

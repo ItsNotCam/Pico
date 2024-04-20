@@ -259,3 +259,87 @@ h5,
     opacity: 1;
   }
 }
+
+
+.disclaimer__title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 1rem;
+  cursor: pointer;
+  z-index: 9001;
+
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+.disclaimer__text {
+  position: fixed;
+  background-color: rgba(12, 12, 12, 0.9);
+  left: 50%;
+  top: 50%; 
+  transform: translate(-50%, -50%);
+  z-index: 9000;
+  height: 100%;
+  width: 100%;
+  
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  & p, span {
+    font-size: 1.75rem;
+    /* text-align: center; */
+    max-width: 80%;
+  }
+
+  & span {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  & span::hover {
+    color: #ffffff;
+  }
+
+  &[data-visible="true"] {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    animation: show-disclaimer 200ms forwards;
+  }
+
+  &[data-visible="false"] {
+    animation: hide-disclaimer 200ms forwards;
+  }
+}
+
+@keyframes show-disclaimer {
+  from {
+    display: flex;
+    visibility: visible;
+    pointer-events: all;
+    opacity: 0;
+  }
+  to {
+    display: flex;
+    visibility: visible;
+    pointer-events: all;
+    opacity: 1;
+  }
+}
+
+@keyframes hide-disclaimer {
+  from {
+    display: flex;
+    visibility: visible;
+    pointer-events: all;
+    opacity: 1;
+  }
+  to {
+    display: none;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+  }
+}
