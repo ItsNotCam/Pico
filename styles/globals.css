@@ -233,11 +233,11 @@ h5,
 }
 
 .page-in {
-  animation: fade-in 1s 1s ease-out forwards;
+  animation: fade-in 0.25s 0.5s ease-out forwards;
 }
 
 .page-out {
-  animation: fade-out 0.5s ease-out forwards;
+  animation: fade-out 0.25s ease-out forwards;
 }
 
 @keyframes fade-in {
@@ -342,4 +342,16 @@ h5,
     pointer-events: none;
     opacity: 0;
   }
+}
+
+.useless-skip-bottom {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+}
+
+.useless-skip-top {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
 }
