@@ -330,16 +330,22 @@ h5,
 }
 
 @keyframes hide-disclaimer {
-  from {
+  0% {
     display: flex;
     visibility: visible;
     pointer-events: all;
     opacity: 1;
   }
-  to {
-    display: none;
-    visibility: hidden;
-    pointer-events: none;
+  99% {
+    display: flex;
+    visibility: visible;
+    pointer-events: all;
+    opacity: 0;
+  }
+  100% {
+    display: none; 
+    visibility: hidden; 
+    pointer-events: none;   
     opacity: 0;
   }
 }
