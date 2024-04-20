@@ -4,6 +4,14 @@ var CURRENT_IMAGE: number = 0;
 var XITION_TIME_MS: number = 1000;
 var DELAY_MS: number = 5000;
 
+$(".img-box img").on("click", function() {
+  let attribution = $(this).data("attribution");
+  if(attribution && window) {
+    window.open(attribution, '_blank').focus();
+    // window.location.assign(attribution);
+  }
+});
+
 setTimeout(() => runCarousel("#gallery-img-number", "-Y"), 0);
 setTimeout(() => runCarousel("#img-box-1", "-Y"), 0);
 setTimeout(() => runCarousel("#img-box-2", "-X"), XITION_TIME_MS + 150);
