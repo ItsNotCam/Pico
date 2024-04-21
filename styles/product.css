@@ -22,9 +22,9 @@
 
   /* height: max(100vh, 40.625rem); */
   height: 100svh;
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr); */
 
   &::after {
     /* content: ""; */
@@ -58,7 +58,7 @@
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 
-  justify-self: center;
+  justify-self: flex-end;
   align-self: center;
   font-size: clamp(6.5rem, 12vw + 1rem, 9rem);
 
@@ -69,6 +69,7 @@
 
   & h2 {
     font-size: 0.35em;
+    text-align: center;
   }
 }
 
@@ -79,7 +80,12 @@
   font-size: clamp(1.6rem, 2vw, 1.855rem);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 0.5em;
+
+  width: 30rem;
+  margin-inline: auto;
 
   & p {
     padding-block: 0.6em;
@@ -90,6 +96,8 @@
     backdrop-filter: blur(4px);
 
     font-size: 0.75em;
+
+    text-align: center;
   }
 
   & p span.lower {
@@ -102,7 +110,7 @@
 
   & button {
     font-size: 1em;
-    width: auto;
+    width: 35%;
     padding-inline: 2em;
     height: auto;
 
@@ -119,7 +127,6 @@
 .grid-item-centered {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
@@ -144,10 +151,255 @@
   opacity: 25%;
 }
 
-.product-description {
-  padding-inline: 3rem;
+.product-content {
+  /* padding-inline: calc(5vw + 4rem); */
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+
+  & > div {
+    padding-inline: calc(5vw + 4rem);
+    padding-block: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
 }
+
+.p-specs {
+  background-color: rgb(230, 230, 230);
+}
+
+.p-content {
+  /* height: 500px; */
+  background-color: rgb(38, 38, 38);
+  color: var(--color-200);
+
+  & .purchase-other__items {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.product-content__title {
+  font-size: calc(1.5vw + 2rem);
+  width: 100%;
+}
+
+.float-left {
+  text-align: right;
+}
+
+.p-bg-dark {
+  background-color: rgb(35, 35, 35);
+  & p, h1 {
+    color: rgb(217, 217, 217);
+  }
+}
+
+.p-bg-light {
+  background-color: rgb(187, 187, 187);
+  & p, h1 {
+    color: rgb(21, 21, 21);
+  }
+}
+
+.p-bg-accent {
+  background-color: rgb(80, 80, 80);
+  /* background-color: rgb(179, 67, 67); */
+  
+  & p, h1 {
+    color: rgb(217, 217, 217);
+  }
+}
+
+.product-description {
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 240px);
+  grid-auto-rows: 240px;
+  gap: 14px;
+  max-width: 90%;
+  padding: 1rem;
+  margin-bottom: 3rem;
+
+  & > a, div {
+    grid-column: span 3;
+    border-radius: 1.5rem;
+    /* box-shadow: 0 0 10px rgb(61, 61, 61); */
+    padding: 1.5rem;
+    text-decoration: none;
+
+    font-size: calc(0.5vw + 1rem);/*1.8rem;*/
+
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    transition: scale 200ms;
+
+    & p {
+      font-size: 1em;
+    } 
+    
+    & h1 {
+      font-size: 2.25em;
+    }
+
+    &:hover {
+      scale: 103%;
+    }
+  }
+
+  & #pd__1 {
+    grid-row: 1 / 3;
+
+    background-image: url("../public/images/snapdragon.png");
+    padding-top: 2.5rem;
+    gap: 1.5rem;
+
+    & p {
+      text-align: center;
+    }
+  }
+
+  & #pd__2 {
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & #pd__3 {
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    
+    background-image: url("../public/images/front_camera.png");
+    /* background-position: 0 50px; */
+    background-size: 400px;
+    background-repeat: no-repeat;
+  }
+
+  & #pd__4 {
+    grid-row: 1 / 3;
+    background-image: url("../public/images/rear_facing_camera.png");
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 0 70px;
+  }
+
+  & #pd__5 {
+    grid-row: 2 / 3;
+    justify-content: flex-end;
+    background-image: url("../public/images/screen.png");
+    background-position: -200px -160px;
+    background-repeat: no-repeat;
+    & h1 {
+      font-size: 1.2em;
+    }
+
+    & p {
+      font-size: 1em;
+    }
+  }
+  
+  & #pd__6 {
+    grid-row: 2 / 3;
+    justify-content: center;
+    & h1 {
+      font-size: 1.2em;
+    }
+
+    & p {
+      font-size: 1em;
+    }
+  }
+
+  & #pd__7 {
+    grid-row: 3 / 4;
+    & p {
+      font-size: 0.85em;
+    }
+  }
+
+  & #pd__8 {
+    grid-column: span 2;
+    /* ok */
+    grid-row: 3 / 4;
+    font-size: 1rem;
+    justify-content: flex-end;
+  }
+
+  & #pd__9 {
+    grid-column: span 4;
+    grid-row: 3 / 4;
+    background-image: url("../public/images/battery.png");
+    background-position: 100px 0;
+  }
+
+  & #pd__10 {
+    grid-row: 3 / 4;
+    justify-content: center;
+  }
+}
+
+.p-photos__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  max-width: 90%;
+  gap: 1rem;
+
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.199);
+    transition: scale 150ms;
+    border-radius: 0.5rem;
+  }
+
+  & img:hover {
+    scale: 101.5%;
+  }
+
+  & :nth-child(1) {
+    grid-column-start: 1;
+    grid-column: span 1;
+  }
+
+  & :nth-child(2) {
+    grid-column: span 1;
+  }
+
+  & :nth-child(3) {
+    grid-column: span 1;
+  }
+
+  & :nth-child(4) {
+    grid-column-start: 1;
+    grid-column: span 1;
+  }
+  
+  & :nth-child(5) {
+    grid-column: span 1;
+  }
+  
+  & :nth-child(6) {
+    grid-column: span 2;
+  }
+
+  & :nth-child(7) {
+    grid-column: span 1;
+  }
+}
+
 
 @media screen and (max-width: 64rem) {
   .product-page-title {

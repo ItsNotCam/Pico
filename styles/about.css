@@ -16,8 +16,10 @@
   }
 
   & svg {
-    width: calc(1.5vw + 1rem);
-    height: calc(1.5vw + 1rem);
+    /* width: calc(1.5vw + 1rem);
+    height: calc(1.5vw + 1rem); */
+    width: 3rem;
+    height: 3rem;
     opacity: 0.8;
     transition: opacity 0.2s, scale 0.2s;
 
@@ -26,6 +28,8 @@
       scale: 1.1;
     }
   }
+  
+  display: none;
 }
 
 .ham {
@@ -470,6 +474,10 @@
 
 @media screen and (max-width: 38.75rem) {
   .credits__title {
+    display: none;
+  }
+
+  .about-nav-socials {
     display: none;
   }
 }

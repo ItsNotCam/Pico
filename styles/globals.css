@@ -314,6 +314,15 @@ h5,
   }
 }
 
+@media screen and (max-width: 64rem) {
+  .disclaimer__text {
+    & p, span, a {
+      font-size: max(22.4px, calc(0.5rem + 2vw));
+      max-width: 80%;
+    }
+  }
+}
+
 @keyframes show-disclaimer {
   from {
     display: flex;
