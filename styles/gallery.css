@@ -279,7 +279,7 @@
   box-shadow: 3px 5px 5px 0px rgb(128, 128, 128);
   border-radius: 0.625rem;
   position: relative;
-  transition: scale 200ms, box-shadow 200ms;
+  transition: scale 200ms;
 
   & img {
     width: 100%;
@@ -290,7 +290,7 @@
   }
 
   &:hover {
-    scale: 100.5%;
+    scale: 102%;
     /* box-shadow: 6px 10px 10px 0px rgb(128, 128, 128); */
   }
 }

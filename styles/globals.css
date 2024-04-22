@@ -89,6 +89,9 @@ h5,
 .clr-9 {
   color: black;
 }
+.clr-7 {
+	color: rgb(24, 24, 24);
+}
 .clr-6 {
   color: var(--color-600);
 }
