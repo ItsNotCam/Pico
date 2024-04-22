@@ -16,6 +16,10 @@
   --fs-5: clamp(2.7994rem, 1.7828rem + 5.0829vi, 5.722rem);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   padding: 0;
   margin: 0;
