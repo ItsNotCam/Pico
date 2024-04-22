@@ -29,8 +29,6 @@
         <div class="circle-2"></div>
         <div class="circle-3"></div>
       </div>
-    </header>
-    <main>
       <div class="gallery-nav" id="gallery-nav" aria-expanded="false">
         <div class="ham" id="gallery-ham" aria-expanded="false">
           <!-- https://codepen.io/shephero/pen/LYVrdjX -->
@@ -97,10 +95,10 @@
             <li data-selected="false" data-link="purchase.html">
               purchase
             </li>
-            <li data-selected="true" data-ignore-link="true">about</li>
+            <li data-selected="false" data-ignore-link="true">about</li>
             <li data-selected="false" data-link="careers.html">careers</li>
             <li data-selected="false" data-link="contact.html">contact</li>
-            <li data-selected="false" data-link="sitemap.html">site map</li>
+            <li data-selected="true" data-ignore-link="true">site map</li>
           </ul>
           <div class="about-nav-socials">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -121,7 +119,19 @@
           </div>
         </div>
       </div>
-      <h1>Nothing here yet...</h1>
+    </header>
+    <main class="sitemap">
+      <h1 class="h1 museo">Where to?</h1>
+      <ul class="clr-1 fw-3">
+        <li class="h2" data-link="index.html">home</li>
+        <li class="h2" data-link="gallery.html">gallery</li>
+        <li class="h2" data-link="product.html">nano</li>
+        <li class="h2" data-link="purchase.html">purchase</li>
+        <li class="h2" data-link="about.html">about</li>
+        <li class="h2" data-link="careers.html">careers</li>
+        <li class="h2" data-link="contact.html">contact</li>
+        <li class="h2" data-selected="true" data-ignore-link="true">site map</li>
+      </ul>
     </main>
     <footer>
       <div id="footer"></div>

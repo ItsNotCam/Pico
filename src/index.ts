@@ -7,6 +7,8 @@ import "../styles/product.css";
 import "../styles/about.css";
 import "../styles/careers.css";
 import "../styles/purchase.css";
+import "../styles/contact.css";
+import "../styles/sitemap.css";
 
 import "./components/nav";
 import "./components/footer";
@@ -18,6 +20,7 @@ import "./about";
 import "./product";
 import "./purchase";
 import "./careers";
+import "./sitemap";
 
 import $ from "jquery";
 

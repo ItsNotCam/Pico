@@ -219,6 +219,7 @@
 		justify-content: space-between;
 		word-wrap: unset;
 		text-overflow: clip;
+		background-color: rgb(62, 62, 62);
 	}
 
 	& :nth-child(1) {
@@ -228,12 +229,10 @@
 	}
 	& :nth-child(2) {
 		width: 60%;
-		background-color: gray;
 		color: white;
 	}
 	& :nth-child(3) {
 		width: 80%;
-		background-color: gray;
 		color: white;
 	}
 }

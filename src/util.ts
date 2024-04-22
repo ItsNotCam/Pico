@@ -16,7 +16,8 @@ export function registerMutualExclusions(selector: string, items: any): void {
 export function redirect(item: JQuery): void {
   const link: string = $(item).data("link");
   const ignore: string = $(item).data("nav-hover");
-  if (!link || ignore === "true" || window.location.pathname === link) {
+
+  if (!link || ignore === "true" || window.location.pathname.replace("/", "") === link) {
     return;
   }
 

@@ -20,19 +20,18 @@
     <title>Pico</title>
   </head>
   <body>
-    <header>
-      <a class="useless-skip-top" href="#skip">Skip Content</a>
-      <div id="skip"></div>
-      <div class="page-in"></div>
+    <div class="page-in"></div>
     <div class="circles-container">
       <div class="circle-1"></div>
       <div class="circle-2"></div>
       <div class="circle-3"></div>
     </div>
-    </header>
-    <main>
-      <div class="gallery-nav" id="gallery-nav" aria-expanded="false">
-        <div class="ham" id="gallery-ham" aria-expanded="false">
+    <header>
+      <a class="useless-skip-top" href="#skip">Skip Content</a>
+      <div id="skip"></div>
+      <!-- <div id="nav-wrapper"></div> -->
+      <div class="gallery-nav" id="product-nav" aria-expanded="false">
+        <div class="ham" id="product-ham" aria-expanded="false" role="group">
           <!-- https://codepen.io/shephero/pen/LYVrdjX -->
           <svg
             class="hb"
@@ -60,7 +59,7 @@
                 begin="reverse.begin"
               />
             </path>
-            <rect width="10" height="10" stroke="none" id="hr1">
+            <rect width="10" height="10" stroke="none">
               <animate
                 dur="2s"
                 id="reverse"
@@ -68,7 +67,7 @@
                 begin="click"
               />
             </rect>
-            <rect width="10" height="10" stroke="none" id="hr2">
+            <rect width="10" height="10" stroke="none">
               <animate
                 dur="0.001s"
                 id="start"
@@ -88,18 +87,21 @@
           </svg>
         </div>
         <div class="foldout-screen-darken"></div>
-        <div class="foldout" aria-expanded="false">
+        <div class="foldout" aria-expanded="false" role="list">
           <h1 class="clr-3"><span class="clr-1">where&nbsp;</span>to?</h1>
           <ul class="clr-1" id="primary-nav">
             <li data-selected="false" data-link="index.html">home</li>
             <li data-selected="false" data-link="gallery.html">gallery</li>
-            <li data-selected="false" data-link="product.html">nano</li>
-            <li data-selected="false" data-link="purchase.html">
-              purchase
+            <li
+              data-selected="false"
+              data-link="product.html"
+            >
+              nano
             </li>
-            <li data-selected="false">about</li>
+            <li data-selected="false" data-link="purchase.html">purchase</li>
+            <li data-selected="false" data-link="about.html">about</li>
             <li data-selected="false" data-link="careers.html">careers</li>
-            <li data-selected="true" data-ignore-link="true">contact</li>
+            <li data-selected="true" data-ignore-link="true" data-link="contact.html">contact</li>
             <li data-selected="false" data-link="sitemap.html">site map</li>
           </ul>
           <div class="about-nav-socials">
@@ -121,7 +123,24 @@
           </div>
         </div>
       </div>
-      <h1>Nothing here yet...</h1>
+    </header>
+    <main class="contact">
+      <div class="contact-form">
+        <h1>Contact Us</h1>
+        <div class="contact-form__item">
+          <label class="fw-6" for="email">Email</label>
+          <input class="spartan" id="email" type="email" placeholder="john.doe@gmail.com" />
+        </div>
+        <div class="contact-form__item">
+          <label class="fw-6" for="email">Name</label>
+          <input class="spartan" id="name" type="text" placeholder="John Doe" />
+        </div>
+        <div class="contact-form__item">
+          <label class="fw-6" for="email">Message</label>
+          <textarea class="spartan" id="message" placeholder="Message Here"></textarea>
+        </div>
+        <button class="btn btn-light" type="submit">Send</button>
+      </div>
     </main>
     <footer>
       <div id="footer"></div>
