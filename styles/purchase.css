@@ -143,6 +143,10 @@
   }
 }
 
+#product-image-4 {
+  object-fit: cover;
+}
+
 .purchase-image-selectors {
   /* position: absolute; */
   /* bottom: 0; */
