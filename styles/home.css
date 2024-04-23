@@ -4,10 +4,13 @@
 
 .page-title {
   position: absolute;
-  top: 50%;
+  /* top: 50%; */
   /* left: clamp(-5.3125rem, -8vw, -6rem); */
-  margin-left: max(-7.0625rem, -8vw);
-  transform: translateY(-50%);
+  /* margin-left: max(-7.0625rem, -8vw); */
+  /* margin-left: 5rem; */
+  left: 4rem;
+  top: 20%;
+  /* transform: translateY(-50%); */
   z-index: 999;
   /* left: -8vw;  */
 
@@ -15,7 +18,7 @@
     opacity: 0.25;
     font-size: clamp(5.3125rem, 8vw, 7rem);
     transform: rotate(90deg);
-    transform-origin: center;
+    transform-origin: left;
   }
 }
 
