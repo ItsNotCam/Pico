@@ -377,3 +377,7 @@ h5,
   top: 0.5rem;
   left: 0.5rem;
 }
+
+.clickable {
+  cursor: pointer;
+}

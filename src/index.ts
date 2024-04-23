@@ -91,3 +91,16 @@ export function registerNavFoldout({
     $(`#${selector}-nav`).attr("aria-expanded", String(!isFoldedOut));
   });
 }
+
+
+$("img.clickable").on("mousedown", function() {
+  let attribution = $(this).data("attribution");
+  if(attribution) {
+    const link = document.createElement('a');
+    link.href = attribution;
+    link.target="_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+});
