@@ -20,6 +20,18 @@
   }
 }
 
+.contact-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center ;
+
+  & img {
+    height: 80px;
+    width: 80px;
+  }
+}
+
 .contact-form__item {
   display: flex;
   flex-direction: column;
