@@ -1,10 +1,10 @@
-# Hosted On George Mason University Server
+# 💸 Pico
+
+## Hosted On George Mason University Server
 https://mason.gmu.edu/~cyoung35/index.html
 
-# Setup
-
+## Setup
 run:
-
 - npm i
 - npx webpack
 
